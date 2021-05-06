@@ -26,7 +26,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'blog',
+}
 </script>
 
 <style>
