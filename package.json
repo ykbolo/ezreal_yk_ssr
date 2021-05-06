@@ -8,11 +8,13 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js",
+    "server": "node ./server/index.js"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.4",
     "core-js": "^3.9.1",
+    "express": "^4.17.1",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
