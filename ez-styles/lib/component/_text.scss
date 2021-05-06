@@ -1,0 +1,53 @@
+/**
+  @name 文本
+ */
+
+/* 排版 */
+
+.t-left {
+  text-align: left;
+}
+.t-center {
+  text-align: center;
+}
+.t-right {
+  text-align: right;
+}
+.t-top {
+  vertical-align: top;
+}
+.t-middle {
+  vertical-align: middle;
+}
+.t-bottom {
+  vertical-align: bottom;
+}
+
+.t-nowrap {
+  white-space: nowrap;
+}
+.t-pre {
+  white-space: pre;
+}
+.t-break {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+.t-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@for $i from 1 through 3 {
+  .t-ellipsis-#{"" + $i} {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+  }
+}
+
+.line-height-1 {
+  line-height: 1;
+}

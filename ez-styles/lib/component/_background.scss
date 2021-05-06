@@ -1,0 +1,48 @@
+/**
+  @name 背景
+ */
+
+@import '../variable';
+
+/* 颜色 */
+
+@each $i, $a in $colors {
+  .bg-#{'' + $i} {
+    background-color: $a;
+  }
+}
+
+.bg-current {
+  background-color: currentColor;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+/* 布局 */
+
+@mixin bg-norepeat {
+  background-repeat: no-repeat;
+}
+
+.bg-100 {
+  @include bg-norepeat;
+
+  background-size: 100% 100%;
+}
+.bg-contain {
+  @include bg-norepeat;
+
+  background-size: contain;
+}
+.bg-cover {
+  @include bg-norepeat;
+
+  background-size: cover;
+}
+.bg-center {
+  @include bg-norepeat;
+
+  background-position: center;
+}

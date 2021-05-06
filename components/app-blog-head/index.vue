@@ -2,10 +2,10 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-06 14:12:31
+ * @LastEditTime: 2021-05-06 14:38:24
 -->
 <template>
-  <div class="app-top-bar">
+  <div class="app-blog-head">
     <svg class="ez-logo">
       <symbol id="line-text">
         <text text-anchor="middle" x="50%" y="50%" dy=".4em">EZREAL-YORK</text>
