@@ -8,17 +8,17 @@
 
 #### 使用场景，从某数据库中导出了如下数据
 
-![avatar](../../../mds/tech/11/2.png)
+![avatar](http://112.124.56.144/images/tech/11/2.png)
 
 #### 希望转化成下面键值对的形式
 
-![avatar](../../../mds/tech/11/3.png)
+![avatar](http://112.124.56.144/images/tech/11/3.png)
 
 #### 这需要进行数据的大量比对，逐个填入 key 和 value，不仅影响工作的效率，也会导致筛选项和文字对不上的风险
 
 #### 因此可以使用 python 的剪贴板功能，将快速处理文本
 
-![avatar](../../../mds/tech/11/4.png)
+![avatar](http://112.124.56.144/images/tech/11/4.png)
 
 #### kvhelper.py
 

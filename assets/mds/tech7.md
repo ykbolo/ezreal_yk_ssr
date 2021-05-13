@@ -1,4 +1,4 @@
-# 结构化解析爬虫数据，写入json文件
+# 结构化解析爬虫数据，写入 json 文件
 
 ## 关键词： **scrapy** **爬虫** **搜索引擎** **json**
 
@@ -6,27 +6,26 @@
 
 #### 背景
 
-已知获取了一批关于苏大新闻标题的数据，可以在数据库中查找到url列表数据，但是对于网页的内容，如何存放呢？
+已知获取了一批关于苏大新闻标题的数据，可以在数据库中查找到 url 列表数据，但是对于网页的内容，如何存放呢？
 
 1.精炼化
 
-网页中爬取下来的内容有head,body,script,style等标签，很显然，将script和style标签的内容爬取下来是不符合需求的。同时，也有很多\r\t\n空格等无语意的字符，需要过滤掉。我们的目标是，用最少的存储空间，尽可能的存放网页中有用的信息。
+网页中爬取下来的内容有 head,body,script,style 等标签，很显然，将 script 和 style 标签的内容爬取下来是不符合需求的。同时，也有很多\r\t\n 空格等无语意的字符，需要过滤掉。我们的目标是，用最少的存储空间，尽可能的存放网页中有用的信息。
 
 2.自动化
 
-利用scrapy进行自动化，爬完一个网页爬下一个。。
+利用 scrapy 进行自动化，爬完一个网页爬下一个。。
 
 3.结构化
 
-由于elasticsearch只接受json格式的文档，所以说爬取下来的文档结构需要为json格式。json格式意味着需要key和value，根据seo的经验，tdk:title-descript-keywords三字段需要拿出来，alt代表图片说明信息，bodycontent代表页面其他内容，url代表当前页面的链接。实现结构化，方便后期的拓展，比如说对tdk的权重的设置，搜索结果url的跳转，更细粒度的划分等。
-
+由于 elasticsearch 只接受 json 格式的文档，所以说爬取下来的文档结构需要为 json 格式。json 格式意味着需要 key 和 value，根据 seo 的经验，tdk:title-descript-keywords 三字段需要拿出来，alt 代表图片说明信息，bodycontent 代表页面其他内容，url 代表当前页面的链接。实现结构化，方便后期的拓展，比如说对 tdk 的权重的设置，搜索结果 url 的跳转，更细粒度的划分等。
 
 #### 需要工具
 
-- xml解析工具--有助于过滤掉style、script标签
-- json工具，方便python中字典到json数据格式的转换
+- xml 解析工具--有助于过滤掉 style、script 标签
+- json 工具，方便 python 中字典到 json 数据格式的转换
 - 注：没有用管道，写文件直接放爬虫文件里面写了
-- pymysql，python读取数据库工具
+- pymysql，python 读取数据库工具
 
 #### 爬虫文件 txt2jsonSpider.py
 
@@ -36,7 +35,7 @@
 import scrapy
 # 吧文本结构化存储到json文件中
 import html as ht
-import pymysql 
+import pymysql
 import json
 from lxml import html
 from mySpider.items import txt2jsonItem
@@ -60,7 +59,7 @@ class Txt2jsonSpider(scrapy.Spider):
         self.index = self.index+1
         item = txt2jsonItem()
         tree = html.fromstring(response.body)
-        ele = tree.xpath('//script | //noscript| //style') 
+        ele = tree.xpath('//script | //noscript| //style')
         for e in ele:
           e.getparent().remove(e)
         treetxt = tree.xpath('//text()')
@@ -106,7 +105,7 @@ class Txt2jsonSpider(scrapy.Spider):
       cursor.execute(sql_geturl)
       info = cursor.fetchall()
       url_pool=[]
-      
+
       for x in info:
         url_pool.append(x[0])
         # self.count=self.count+1
@@ -127,4 +126,4 @@ class Txt2jsonSpider(scrapy.Spider):
 
 #### 结果预览
 
-![avatar](../../../mds/tech/7/preview.bmp)
+![avatar](http://112.124.56.144/images/tech/7/preview.bmp)

@@ -24,10 +24,10 @@
 
 ## 游戏截图
 
-![avatar](../../../mds/game/1/1.bmp)
-![avatar](../../../mds/game/1/2.bmp)
-![avatar](../../../mds/game/1/3.bmp)
-![avatar](../../../mds/game/1/4.bmp)
+![avatar](http://112.124.56.144/images/game/1/1.bmp)
+![avatar](http://112.124.56.144/images/game/1/2.bmp)
+![avatar](http://112.124.56.144/images/game/1/3.bmp)
+![avatar](http://112.124.56.144/images/game/1/4.bmp)
 
 ## 前端代码
 

@@ -26,7 +26,7 @@
 
 界面
 
-![avatar](../../../mds/tech/4/cmder.jpg)
+![avatar](http://112.124.56.144/images/tech/4/cmder.jpg)
 
 ##### **打好基础**
 
@@ -110,7 +110,7 @@ console.log(`success listen at port:${port}......`);
 
 下面这张图很简要的描述了 webpack 干了什么
 
-![avatar](../../../mds/tech/4/webpack.jpg)
+![avatar](http://112.124.56.144/images/tech/4/webpack.jpg)
 
 一些诸如 vue-cli 脚手架快速构建项目工具，也是结合了 webpack 的。
 
@@ -138,7 +138,7 @@ link： https://www.echartsjs.com/zh/index.html
 
 d3 是比较高阶的一门 js 库了，如果对于数据可视化研究有需求或者兴趣，可以尝试去学习这个 它的自由度非常高，因为他不负责控制图形的展示，而是提供了丰富的 api，帮助你完成你天马行空的想象。在 bilibili 著名的 up 见齐 就是基于这个框架来做的可视化工具。
 
-![avatar](../../../mds/tech/4/见齐.jpg)
+![avatar](http://112.124.56.144/images/tech/4/见齐.jpg)
 
 需要比较好的耐心和一定的英文阅读能力，暂时没有比较人性化最新版本教程。
 

@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-12 19:39:27
+ * @LastEditTime: 2021-05-13 11:52:45
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -44,14 +44,9 @@ async function fileDisplay(filePath, result) {
 
 fileDisplay('./assets/mds', []).then((contentArr) => {
   console.log(contentArr.length)
-  // db.query(
-  //   `insert into tb_articles_for_life (content,title,time) values (${2},${3},${4})`
-  // )
-  db.query('select * from tb_articles_for_life', (err, result) => {
-    if (err) throw err
-    console.log(result)
+  db.query(`delete from tb_articles_for_life`, () => {
+    autoInsert(0, contentArr)
   })
-  // autoInsert(0, contentArr)
 })
 function autoInsert(index, contentArr) {
   console.log(index, contentArr)
@@ -59,8 +54,11 @@ function autoInsert(index, contentArr) {
   if (index >= contentArr.length) {
     return ''
   } else {
+    // console.log(contentArr[index].content)
     db.query(
-      `insert into tb_articles_for_life (content,title,time) values (${2323},${3},${4})`,
+      `insert into tb_articles_for_life (content) values (${JSON.stringify(
+        contentArr[index].content
+      )})`,
       (err, res) => {
         if (err) throw err
         autoInsert(index + 1, contentArr)

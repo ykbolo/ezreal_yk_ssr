@@ -16,19 +16,19 @@ vue-cli 工具是非常好用的一款搭建前端服务的工具，因为可以
 
 简要的讲一下项目结构，只备注主要部分
 
-![avatar](../../../mds/tech/9/3.jpg)
+![avatar](http://112.124.56.144/images/tech/9/3.jpg)
 
 #### 初始化工程
 
 利用 vue-cli 工具快速 init 出一个 vue 项目
 
-![avatar](../../../mds/tech/9/1.jpg)
+![avatar](http://112.124.56.144/images/tech/9/1.jpg)
 
 #### 快速的写出前端代码
 
 实现如下效果
 
-![avatar](../../../mds/tech/9/2.jpg)
+![avatar](http://112.124.56.144/images/tech/9/2.jpg)
 
 #### 封装前端 axios 请求
 
