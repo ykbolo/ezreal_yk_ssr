@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-13 11:52:45
+ * @LastEditTime: 2021-05-13 15:45:53
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -56,7 +56,7 @@ function autoInsert(index, contentArr) {
   } else {
     // console.log(contentArr[index].content)
     db.query(
-      `insert into tb_articles_for_life (content) values (${JSON.stringify(
+      `insert into tb_articles_for_life (id,content) values (${index},${JSON.stringify(
         contentArr[index].content
       )})`,
       (err, res) => {

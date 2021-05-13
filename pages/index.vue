@@ -21,12 +21,6 @@
           GitHub
         </a>
       </div>
-      <video
-        width="1000"
-        controls="controls"
-        height="1000"
-        src="http://ezreal-yk.cn/video/overwatch.mp4"
-      ></video>
     </div>
   </div>
 </template>
