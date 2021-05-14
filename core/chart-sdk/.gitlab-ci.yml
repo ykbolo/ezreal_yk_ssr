@@ -1,0 +1,12 @@
+stages:
+  - eslint_test
+
+eslint_job:
+  stage: eslint_test
+  script:
+    - export
+    - npm install --unsafe-perm
+    - npm run eslint
+    - npm run test
+  only:
+    - branches
