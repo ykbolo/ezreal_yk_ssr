@@ -17,7 +17,8 @@ $ npm run start
 $ npm run generate
 # 更新文章
 $ npm run updateMds
-
+# 发布静态资源
+$ npm run syncAssets
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

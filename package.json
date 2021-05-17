@@ -10,7 +10,8 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "server": "babel-node ./server/index.js",
-    "updateMds": "babel-node ./tools/fileDisplay.js"
+    "updateMds": "babel-node ./tools/fileDisplay.js",
+    "syncAssets": "cp -a assets /assets"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.4",
