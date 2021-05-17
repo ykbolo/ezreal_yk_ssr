@@ -1,0 +1,5 @@
+
+> y@1.0.0 server /Projects/ezreal_yk_ssr
+> babel-node ./server/index.js
+
+数据库连接成功！
