@@ -14,8 +14,12 @@
     "syncAssets": "cp -a assets /assets"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/proxy": "^2.1.0",
     "ant-design-vue": "^1.7.4",
+    "axios": "^0.21.1",
     "core-js": "^3.9.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nuxt": "^2.15.3"
   },
@@ -67,5 +71,11 @@
     "ts-jest": "^26.5.4",
     "vue-jest": "^3.0.4",
     "vuex-module-decorators": "^1.0.1"
+  },
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": 80
+    }
   }
 }

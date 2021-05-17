@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:01:24
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 11:12:41
+ * @LastEditTime: 2021-05-17 16:33:14
  */
 // const fs = require('fs')
 // const path = require('path')
@@ -13,11 +13,13 @@ const app = express()
 
 const bodyParser = require('body-parser')
 const homedir = os.homedir()
+const cors = require('cors')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use('/', require('./apis/getMdFromLocal'))
-app.use('/', require('./apis/getPicsFromServer'))
+app.use('/api/*', cors())
+app.use('/api', require('./apis/getMdFromLocal'))
+app.use('/api', require('./apis/getPicsFromServer'))
 // // app.use('/apis/getMdFromLocal', require('./apis/getMdFromLocal'))
 app.get('/getMdFromLocal', function (req, res, next) {
   console.log(homedir)
