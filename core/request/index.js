@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:46:53
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 16:34:57
+ * @LastEditTime: 2021-05-17 17:02:53
  */
 import axios from 'axios'
 
@@ -11,6 +11,9 @@ const _createRequest = (host, request) => {
     baseURL: host,
     timeout: 30000,
     headers: { 'Content-Type': 'text/plain' },
+  })
+  clientRequest.interceptors.response.use(function (response) {
+    return response.data
   })
   return clientRequest
 }

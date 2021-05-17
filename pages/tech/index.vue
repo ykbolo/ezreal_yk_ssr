@@ -2,28 +2,49 @@
  * @Author: Yang Kang
  * @Date: 2021-05-13 14:20:06
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 11:05:36
+ * @LastEditTime: 2021-05-17 17:09:16
 -->
 <template>
   <div class="container">
-    <a-carousel :after-change="onChange">
-      <div><h3>1</h3></div>
-      <div><h3>2</h3></div>
-      <div><h3>3</h3></div>
-      <div><h3>4</h3></div>
+    <a-carousel arrows dots-class="slick-dots slick-thumb">
+      <a slot="customPaging" slot-scope="props">
+        <img :src="items[props.i]" />
+      </a>
+      <div v-for="item in total" :key="item">
+        <img :src="items[item]" />
+      </div>
     </a-carousel>
   </div>
 </template>
 <script src="./component.js"></script>
 <style lang="scss" scoped>
-::v-deep .slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  background: #364d79;
-  overflow: hidden;
+::v-deep .slick-dots {
+  height: auto;
 }
-.slick-slide h3 {
-  color: #fff;
+::v-deep .slick-slide img {
+  border: 5px solid #fff;
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 300px;
+}
+::v-deep .slick-thumb {
+  bottom: -45px;
+}
+::v-deep .slick-thumb li {
+  width: 60px;
+  height: 45px;
+}
+::v-deep .slick-thumb li img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+::v-deep .slick-thumb {
+  li.slick-active {
+    img {
+      filter: grayscale(0%);
+    }
+  }
 }
 </style>
