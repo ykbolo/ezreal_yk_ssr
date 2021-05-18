@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 10:00:09
+ * @LastEditTime: 2021-05-18 15:15:44
  */
 import { Router } from 'express'
 import mysql from 'mysql'
@@ -44,18 +44,8 @@ const queryCount = params => {
     })
   })
 }
-const queryHasNextPage = params => {
-  return new Promise((resolve, reject) => {
-    db.query('select count(*) from tb_articles_for_life where id>2', (err, result) => {
-      if (err) {
-        throw err
-      }
-      resolve(result[0]['count(*)'])
-    })
-  })
-}
 function getMdFromMysql(params, res) {
-  Promise.all([queryItems(params), queryCount(), queryHasNextPage(params)]).then(([items, total]) => {
+  Promise.all([queryItems(params), queryCount()]).then(([items, total]) => {
     res.send({
       total,
       items

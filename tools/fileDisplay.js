@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-13 15:45:53
+ * @LastEditTime: 2021-05-18 15:58:56
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -13,7 +13,7 @@ const mysql = require('mysql')
 const config = require('../config/mysql')
 const db = mysql.createConnection(config)
 
-db.connect((err) => {
+db.connect(err => {
   if (err) throw err
   console.log('数据库连接成功！')
 })
@@ -42,23 +42,27 @@ async function fileDisplay(filePath, result) {
   }
 }
 
-fileDisplay('./assets/mds', []).then((contentArr) => {
+fileDisplay('./assets/mds', []).then(contentArr => {
   console.log(contentArr.length)
   db.query(`delete from tb_articles_for_life`, () => {
     autoInsert(0, contentArr)
   })
 })
 function autoInsert(index, contentArr) {
-  console.log(index, contentArr)
+  // console.log(index, contentArr)
   // console.log()
   if (index >= contentArr.length) {
     return ''
   } else {
     // console.log(contentArr[index].content)
+    let content = contentArr[index].content
+    let title = content.split('\n')[0]
+    let time = content.split('\n')[2]
+    console.log(title, time, content)
     db.query(
-      `insert into tb_articles_for_life (id,content) values (${index},${JSON.stringify(
-        contentArr[index].content
-      )})`,
+      `insert into tb_articles_for_life (id,content,title,time) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(
+        title
+      )},${JSON.stringify(time)})`,
       (err, res) => {
         if (err) throw err
         autoInsert(index + 1, contentArr)

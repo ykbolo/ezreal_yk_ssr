@@ -1,17 +1,15 @@
 # node-client-api 实现 elasticsearch 批量导入文档
 
-## 关键词： **elasticsearch** **搜索引擎** **json**
-
 ### 时间：**2020.03.23**
 
 #### 背景
 
-苦苦搜寻了很久关于 elasticsearch 批量导入数据的操作，最好是一键傻瓜式操作那种。但是看了 bulk 的介绍，似乎并不符合我的需要，虽然可以一次性输入很多语句，但是文字还是要一个个手动打上去呀。将整个文件夹中的 json 文档，导入到 elasticsearch 索引库里面去。事实证明，想得美---要自己写成程序实现批量导入。
+苦苦搜寻了很久关于 elasticsearch 批量导入数据的操作，最好是一键傻瓜式操作那种。但是看了 bulk 的介绍，似乎并不符合我的需要，虽然可以一次性输入很多语句，但是文字
+还是要一个个手动打上去呀。将整个文件夹中的 json 文档，导入到 elasticsearch 索引库里面去。事实证明，想得美---要自己写成程序实现批量导入。
 
 #### 需要工具
 
-- 上期爬下来的一系列 json 文件
-  ![avatar](http://112.124.56.144/images/tech/8/json.jpg)
+- 上期爬下来的一系列 json 文件 ![avatar](http://112.124.56.144/images/tech/8/json.jpg)
 - elastic-search-7.x
 - elastic-search-head/kibana
 - nodejs

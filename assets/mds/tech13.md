@@ -1,7 +1,5 @@
 # 利用 portfinder 解决端口号冲突
 
-## 关键词：端口，dev，portfinder，nodejs
-
 ### 时间：**2020.03.29**
 
 #### 背景
@@ -16,10 +14,8 @@
 
 ++++++为了避免对项目的副作用，需要遵循以下原则：+++++++
 
-利用环境变量，使得端口号自适应只会作用于 dev 环境
-在没有端口被占用的情况下，保证项目正常运行
-无需开发者手动操作，对代码的改动尽可能小
-因为在项目启动前，计算机中有什么端口号在被占用是无法直接感知的，这个时候如果有一个工具，类似执行 ps-ef 一样。如果端口号被占用，则自增，还是被占用则再自增...直到找到一个可以使用的端口号。
+利用环境变量，使得端口号自适应只会作用于 dev 环境在没有端口被占用的情况下，保证项目正常运行无需开发者手动操作，对代码的改动尽可能小因为在项目启动前，计算机中有
+什么端口号在被占用是无法直接感知的，这个时候如果有一个工具，类似执行 ps-ef 一样。如果端口号被占用，则自增，还是被占用则再自增...直到找到一个可以使用的端口号。
 
 #### portfinder 恰好可以解决这一需求 https://www.npmjs.com/package/portfinder
 
@@ -35,17 +31,11 @@ getPort 类似于上面的自增逻辑，用于在一个范围内，寻找可用
 
 var portfinder = require('portfinder');
 
-portfinder.getPort(function (err, port) {
-//
-// `port` is guaranteed to be a free port
-// in this scope.
-//
-});
+portfinder.getPort(function (err, port) { // // `port` is guaranteed to be a free port // in this scope. // });
 
 #### 自定义配置范围
 
-portfinder.basePort = 3000; // default: 8000
-portfinder.highestPort = 3333; // default: 65535
+portfinder.basePort = 3000; // default: 8000 portfinder.highestPort = 3333; // default: 65535
 
 知道这些就足以满足我们的需求
 
