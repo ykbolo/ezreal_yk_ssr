@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-13 14:21:34
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 09:44:53
+ * @LastEditTime: 2021-05-18 09:52:22
  */
 import service from '../../services/index'
 
@@ -15,14 +15,11 @@ export default {
     const result = await service.getPicsFromServer({ keyword: 'jinbao' })
     return {
       items: result.items,
-      total: result.total,
+      total: result.total
     }
   },
   data() {
-    return {
-      baseUrl:
-        'https://raw.githubusercontent.com/vueComponent/ant-design-vue/master/components/vc-slick/assets/img/react-slick/',
-    }
+    return {}
   },
   mounted() {
     console.log(this.items)
@@ -30,6 +27,6 @@ export default {
   methods: {
     onChange(a, b, c) {
       console.log(a, b, c)
-    },
-  },
+    }
+  }
 }

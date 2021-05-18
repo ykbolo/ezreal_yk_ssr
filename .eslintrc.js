@@ -7,12 +7,13 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: ['@nuxtjs'],
+  extends: ['plugin:vue/essential'],
   plugins: [],
 
   rules: {
     indent: 0,
     camelcase: 0,
+    'arrow-parens': 'off',
     'space-before-function-paren': 0,
     'no-console': 'warn',
     'no-debugger': 'warn',

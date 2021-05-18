@@ -20,6 +20,8 @@
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "cors": "^2.8.5",
+    "cytoscape": "^3.19.0",
+    "cytoscape-automove": "^1.10.2",
     "express": "^4.17.1",
     "nuxt": "^2.15.3"
   },

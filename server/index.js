@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:01:24
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 16:33:14
+ * @LastEditTime: 2021-05-18 09:56:49
  */
 // const fs = require('fs')
 // const path = require('path')
@@ -22,13 +22,9 @@ app.use('/api', require('./apis/getMdFromLocal'))
 app.use('/api', require('./apis/getPicsFromServer'))
 // // app.use('/apis/getMdFromLocal', require('./apis/getMdFromLocal'))
 app.get('/getMdFromLocal', function (req, res, next) {
-  console.log(homedir)
-  console.log(__dirname, './assets/mds/')
-  // path.dirname(__dirname)
-  // const data = fs.readFileSync(path.resolve(homedir), 'utf-8')
   res.end(
     JSON.stringify({
-      body: homedir,
+      body: homedir
     })
   )
 })
