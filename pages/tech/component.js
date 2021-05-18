@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-13 14:21:34
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 17:07:21
+ * @LastEditTime: 2021-05-18 09:44:53
  */
 import service from '../../services/index'
 
@@ -24,7 +24,9 @@ export default {
         'https://raw.githubusercontent.com/vueComponent/ant-design-vue/master/components/vc-slick/assets/img/react-slick/',
     }
   },
-  mounted() {},
+  mounted() {
+    console.log(this.items)
+  },
   methods: {
     onChange(a, b, c) {
       console.log(a, b, c)

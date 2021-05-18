@@ -2,16 +2,16 @@
  * @Author: Yang Kang
  * @Date: 2021-05-13 14:20:06
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-17 17:09:16
+ * @LastEditTime: 2021-05-17 18:12:54
 -->
 <template>
   <div class="container">
-    <a-carousel arrows dots-class="slick-dots slick-thumb">
-      <a slot="customPaging" slot-scope="props">
-        <img :src="items[props.i]" />
-      </a>
-      <div v-for="item in total" :key="item">
-        <img :src="items[item]" />
+    <a-carousel arrows dots-class="slick-dots slick-thumb" autoplay>
+      <!-- <a slot="customPaging" slot-scope="props">
+        <img :src="items[props.i + 1]" />
+      </a> -->
+      <div v-for="item in items" :key="item">
+        <img :src="item" />
       </div>
     </a-carousel>
   </div>
