@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-19 11:45:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-19 12:04:28
+ * @LastEditTime: 2021-05-19 12:15:09
  */
 /*
  * @Author: Yang Kang
@@ -43,7 +43,6 @@ const queryItems = params => {
 }
 function getMdFromMysql(params, res) {
   let date = moment().format('YYYY-MM-DD')
-  date = '2021-05-22'
 
   db.query(`select * from 2021_day where time like '${date}%'`, (err, result) => {
     if (err) {
