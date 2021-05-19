@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:01:24
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 09:56:49
+ * @LastEditTime: 2021-05-19 11:45:52
  */
 // const fs = require('fs')
 // const path = require('path')
@@ -20,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/api/*', cors())
 app.use('/api', require('./apis/getMdFromLocal'))
 app.use('/api', require('./apis/getPicsFromServer'))
+app.use('/api', require('./apis/getArticleByMd5'))
+app.use('/api', require('./apis/get2021Day'))
 // // app.use('/apis/getMdFromLocal', require('./apis/getMdFromLocal'))
 app.get('/getMdFromLocal', function (req, res, next) {
   res.end(

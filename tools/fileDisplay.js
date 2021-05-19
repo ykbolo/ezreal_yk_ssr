@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 15:58:56
+ * @LastEditTime: 2021-05-18 16:21:33
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -12,7 +12,7 @@ const app = express()
 const mysql = require('mysql')
 const config = require('../config/mysql')
 const db = mysql.createConnection(config)
-
+const md5 = require('md5-node')
 db.connect(err => {
   if (err) throw err
   console.log('数据库连接成功！')
@@ -58,11 +58,12 @@ function autoInsert(index, contentArr) {
     let content = contentArr[index].content
     let title = content.split('\n')[0]
     let time = content.split('\n')[2]
+
     console.log(title, time, content)
     db.query(
-      `insert into tb_articles_for_life (id,content,title,time) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(
+      `insert into tb_articles_for_life (id,content,title,time,md5) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(
         title
-      )},${JSON.stringify(time)})`,
+      )},${JSON.stringify(time)},md5(title))`,
       (err, res) => {
         if (err) throw err
         autoInsert(index + 1, contentArr)
