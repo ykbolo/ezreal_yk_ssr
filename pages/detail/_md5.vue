@@ -2,12 +2,12 @@
  * @Author: Yang Kang
  * @Date: 2021-05-18 16:16:21
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 16:47:46
+ * @LastEditTime: 2021-05-24 16:55:18
 -->
 
 <template>
-  <div>
-    <div id="md"></div>
+  <div class="container">
+    <div id="md" class="container"></div>
   </div>
 </template>
 <script>
@@ -20,6 +20,7 @@
     validate(md5) {
       return true
     },
+    layout: 'blog',
     async asyncData({ params }) {
       console.log(params, '---')
       let md5 = params.md5
