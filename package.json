@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "md5-node": "^1.0.1",
     "nuxt": "^2.15.3",
+    "qs": "^6.9.4",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {

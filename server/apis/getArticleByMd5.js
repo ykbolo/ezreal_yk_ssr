@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 16:45:51
+ * @LastEditTime: 2021-05-24 14:21:44
  */
 import { Router } from 'express'
 import mysql from 'mysql'
@@ -24,7 +24,7 @@ const queryItems = params => {
   return new Promise((resolve, reject) => {
     db.query(
       // `select * from tb_articles_for_life`,
-      `select * from tb_articles_for_life where md5='${md5}'`,
+      `select * from tb_techs where md5='${md5}'`,
       (err, result) => {
         if (err) {
           throw err
@@ -46,7 +46,10 @@ function getMdFromMysql(params, res) {
 }
 
 router.post('/getArticleByMd5', function (req, res, next) {
-  console.log(req.body)
+  console.log(req.body, 11)
+  console.log(req.query, 11)
+  console.log(req.params, 11)
+  // console.log(req)
   getMdFromMysql(req.body, res)
 })
 export default router
