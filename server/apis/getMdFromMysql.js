@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 15:15:44
+ * @LastEditTime: 2021-05-24 17:08:29
  */
 import { Router } from 'express'
 import mysql from 'mysql'
@@ -24,7 +24,7 @@ const queryItems = params => {
   return new Promise((resolve, reject) => {
     db.query(
       // `select * from tb_articles_for_life`,
-      `select * from tb_articles_for_life LIMIT ${start},${hit};`,
+      `select * from tb_techs LIMIT ${start},${hit};`,
       (err, result) => {
         if (err) {
           throw err
@@ -36,7 +36,7 @@ const queryItems = params => {
 }
 const queryCount = params => {
   return new Promise((resolve, reject) => {
-    db.query('select count(*) from tb_articles_for_life', (err, result) => {
+    db.query('select count(*) from tb_techs', (err, result) => {
       if (err) {
         throw err
       }
