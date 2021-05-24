@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-18 16:21:33
+ * @LastEditTime: 2021-05-24 11:20:48
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -17,7 +17,8 @@ db.connect(err => {
   if (err) throw err
   console.log('数据库连接成功！')
 })
-var filePath = path.resolve('./assets/mds')
+
+var filePath = path.resolve('./assets/techs')
 let arr = []
 
 async function fileDisplay(filePath, result) {
@@ -42,9 +43,9 @@ async function fileDisplay(filePath, result) {
   }
 }
 
-fileDisplay('./assets/mds', []).then(contentArr => {
+fileDisplay('./assets/techs', []).then(contentArr => {
   console.log(contentArr.length)
-  db.query(`delete from tb_articles_for_life`, () => {
+  db.query(`delete from tb_techs`, () => {
     autoInsert(0, contentArr)
   })
 })
@@ -52,7 +53,8 @@ function autoInsert(index, contentArr) {
   // console.log(index, contentArr)
   // console.log()
   if (index >= contentArr.length) {
-    return ''
+    process.exit()
+    // return ''
   } else {
     // console.log(contentArr[index].content)
     let content = contentArr[index].content
@@ -61,9 +63,9 @@ function autoInsert(index, contentArr) {
 
     console.log(title, time, content)
     db.query(
-      `insert into tb_articles_for_life (id,content,title,time,md5) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(
-        title
-      )},${JSON.stringify(time)},md5(title))`,
+      `insert into tb_techs (id,content,title,time,md5) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(title)},${JSON.stringify(
+        time
+      )},md5(title))`,
       (err, res) => {
         if (err) throw err
         autoInsert(index + 1, contentArr)
