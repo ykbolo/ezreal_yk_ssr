@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:46:53
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 16:17:24
+ * @LastEditTime: 2021-05-25 17:29:49
  */
 import axios from 'axios'
 import queryString from '../query-string'
@@ -23,7 +23,7 @@ const _createRequest = (host, request) => {
   return clientRequest
 }
 
-const apiRoot = 'http://localhost:9003/api'
+const apiRoot = 'http://112.124.56.144:9003/api'
 export const createHttpRequest = () => {
   return _createRequest(apiRoot, axios)
 }
