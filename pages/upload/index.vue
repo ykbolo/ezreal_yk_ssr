@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 17:14:28
+ * @LastEditTime: 2021-05-25 17:45:11
 -->
 <template>
   <div class="container">
@@ -13,9 +13,7 @@
         <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)" :style="{ 'background-image': `url(${image})` }">
           <!-- <img :src="image" alt="" :style="{ 'object-fit': true }" /> -->
         </div>
-        <label class="image-upload add m-r-30">
-          <input ref="input" id="imgUp" type="file" accept="image/png, image/jpeg" @change="handle_change" class="d-none"
-        /></label>
+        <label class="image-upload add m-r-30"> <input ref="input" id="imgUp" type="file" accept="image/*" @change="handle_change" class="d-none" /></label>
       </div>
       <div class="submit btn btn-primary w-100" @click="submit()">发布</div>
       <!-- <div class="add m-t-30" @click="clickInput"></div> -->
