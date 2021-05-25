@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 17:36:29
+ * @LastEditTime: 2021-05-25 17:40:26
  */
 
 const express = require('express')
@@ -15,7 +15,7 @@ let filename = ''
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     //    指定文件存放路径
-    cb(null, './assets/mood/imgs')
+    cb(null, '/assets/mood/imgs')
   },
   filename: function (req, file, cb) {
     // 指定文件名,先获取扩展,随机生成文件名保存给保存文件的方法
