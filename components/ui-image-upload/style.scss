@@ -1,0 +1,26 @@
+.ui-image-upload {
+  &:hover {
+    .preview {
+      visibility: visible;
+    }
+
+    .remove {
+      background-color: transparent;
+    }
+  }
+
+  .remove {
+    width: 20px;
+    height: 20px;
+    background-color: hsla(0, 0, 0, 0.5);
+  }
+
+  .preview {
+    visibility: hidden;
+    background-color: hsla(0, 0, 0, 0.5);
+
+    .remove {
+      background-color: transparent;
+    }
+  }
+}
