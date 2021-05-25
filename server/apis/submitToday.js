@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 16:07:26
+ * @LastEditTime: 2021-05-25 16:31:44
  */
 import { Router } from 'express'
 import moment from 'moment'
@@ -21,7 +21,8 @@ db.connect(err => {
 })
 
 function addSubmit(params, res) {
-  let time = moment().format('YYYY-MM-DD HH:MM:SS')
+  let time = moment().format('YYYY-MM-DD HH:mm:ss')
+  console.log(time)
   let author = params.author || '匿名'
   let images = params.images || []
   let words = params.words

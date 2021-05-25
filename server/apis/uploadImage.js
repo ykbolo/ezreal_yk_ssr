@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 11:08:25
+ * @LastEditTime: 2021-05-25 16:21:43
  */
 
 const express = require('express')
@@ -30,11 +30,15 @@ let upload = multer({ storage: storage })
 router.post('/uploadImage', upload.any(), (req, res) => {
   console.log(req.files)
   let file = req.files?.[0]
+  let fis = file.path.split('\\')
+  let filename = fis[fis.length - 1]
   res.json({
     code: '0000',
     type: 'single',
     originalname: file.originalname,
-    path: file.path
+    path: file.path,
+    filename: filename,
+    filenameOnline: `http://112.124.56.144/assets/mood/imgs/${filename}`
   })
 })
 
