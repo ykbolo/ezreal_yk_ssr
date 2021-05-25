@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 17:00:02
+ * @LastEditTime: 2021-05-25 17:14:28
 -->
 <template>
   <div class="container">
@@ -80,7 +80,7 @@
         }
         axios({
           method: 'post',
-          url: 'http://127.0.0.1:9003/api/uploadImage',
+          url: 'http://112.124.56.144:9003/api/uploadImage',
           data: formData,
           headers: {
             'Content-Type': 'multipart/form-data'
