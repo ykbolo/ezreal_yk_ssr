@@ -2,25 +2,28 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 17:11:29
+ * @LastEditTime: 2021-05-26 15:56:31
 -->
 <template>
   <div>
-    <div class="app-blog-head">
-      <svg class="ez-logo">
-        <symbol id="line-text">
-          <text text-anchor="middle" x="50%" y="50%" dy=".4em">EZREAL-YORK</text>
-        </symbol>
-        <use xlink:href="#line-text" class="text"></use>
-        <use xlink:href="#line-text" class="text"></use>
-        <use xlink:href="#line-text" class="text"></use>
-        <use xlink:href="#line-text" class="text"></use>
-      </svg>
-      <div class="main-nav">
-        <nuxt-link v-for="(el, index) in tabs" :key="index" :to="el.path">
-          {{ el.name }}
-        </nuxt-link>
+    <div class="app-blog-head justify-content-between align-items-center">
+      <div class="p-relative d-flex">
+        <svg class="ez-logo">
+          <symbol id="line-text">
+            <text text-anchor="middle" x="50%" y="50%" dy=".4em">EZREAL-YORK</text>
+          </symbol>
+          <use xlink:href="#line-text" class="text"></use>
+          <use xlink:href="#line-text" class="text"></use>
+          <use xlink:href="#line-text" class="text"></use>
+          <use xlink:href="#line-text" class="text"></use>
+        </svg>
+        <div class="main-nav">
+          <nuxt-link v-for="(el, index) in tabs" :key="index" :to="el.path">
+            {{ el.name }}
+          </nuxt-link>
+        </div>
       </div>
+      <nuxt-link to="/mood" class="p-h-30 p-v-15 f-bold mood">MOOD</nuxt-link>
     </div>
     <div class="head-holder"></div>
   </div>

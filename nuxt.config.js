@@ -1,10 +1,15 @@
+import Webpack from 'webpack'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'y',
+    title: 'ezreal-yk.cn',
     htmlAttrs: {
       lang: 'en'
     },
+    env: {
+      NODE_ENV: process.env.NODE_ENV
+    },
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -45,7 +50,7 @@ export default {
   css: ['ant-design-vue/dist/antd.css', 'ez-styles/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/antd-ui', '@/plugins/highlight'],
+  plugins: ['@/plugins/antd-ui', '@/plugins/highlight', '@/plugins/vant'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -60,5 +65,14 @@ export default {
   // modules: ['@nuxtjs/axios', '@nuxtjs/proxy'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    extend(config) {
+      config.plugins.push(
+        new Webpack.DefinePlugin({
+          __DEV__: process.env.NODE_ENV === 'dev',
+          __PROD__: process.env.NODE_ENV === 'prod'
+        })
+      )
+    }
+  }
 }

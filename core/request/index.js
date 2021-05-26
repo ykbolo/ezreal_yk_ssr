@@ -2,11 +2,11 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:46:53
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 17:29:49
+ * @LastEditTime: 2021-05-26 15:45:11
  */
 import axios from 'axios'
 import queryString from '../query-string'
-
+import config from '~/config/backend'
 const _createRequest = (host, request) => {
   const clientRequest = request.create({
     baseURL: host,
@@ -22,8 +22,8 @@ const _createRequest = (host, request) => {
   })
   return clientRequest
 }
-
-const apiRoot = 'http://112.124.56.144:9003/api'
+console.log(__DEV__, __PROD__)
+const apiRoot = `${config.host}/api`
 export const createHttpRequest = () => {
   return _createRequest(apiRoot, axios)
 }

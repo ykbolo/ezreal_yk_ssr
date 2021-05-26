@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 17:45:11
+ * @LastEditTime: 2021-05-26 16:46:36
 -->
 <template>
   <div class="container">
@@ -10,8 +10,9 @@
       <a-input v-model="author" placeholder="输入昵称"></a-input>
       <a-textarea placeholder="输入文字描述" auto-size v-model="words" class="m-t-30" />
       <div class="d-flex m-t-30">
-        <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)" :style="{ 'background-image': `url(${image})` }">
+        <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)">
           <!-- <img :src="image" alt="" :style="{ 'object-fit': true }" /> -->
+          <van-image width="100%" height="100%" :src="image" fit="contain" />
         </div>
         <label class="image-upload add m-r-30"> <input ref="input" id="imgUp" type="file" accept="image/*" @change="handle_change" class="d-none" /></label>
       </div>
@@ -26,6 +27,8 @@
   import axios from 'axios'
   import services from '~/services'
   import uploadCard from './components/card.vue'
+  import config from '~/config/backend'
+  import { Image as VanImage } from 'vant'
   export default {
     // layout: 'blog',
     async asyncData() {
@@ -44,7 +47,8 @@
       }
     },
     components: {
-      [uploadCard.name]: uploadCard
+      [uploadCard.name]: uploadCard,
+      [VanImage.name]: VanImage
     },
     mounted() {
       console.log(this.items)
@@ -78,15 +82,15 @@
         }
         axios({
           method: 'post',
-          url: 'http://112.124.56.144:9003/api/uploadImage',
+          url: `${config.host}/api/uploadImage`,
           data: formData,
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         }).then(function (res) {
           console.log(res)
-          if (res && res.data && res.data.filenameOnline) {
-            self.images.push({ url: res.data.filenameOnline })
+          if (res && res.data && res.data.filenameOnline && res.data.filenameOnlineZipped) {
+            self.images.push({ url: res.data.filenameOnline, urlZipped: res.data.filenameOnlineZipped })
           }
         })
       },
