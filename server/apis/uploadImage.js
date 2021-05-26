@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-26 16:44:30
+ * @LastEditTime: 2021-05-26 17:40:15
  */
 
 import images from 'images'
@@ -21,7 +21,7 @@ let storage = multer.diskStorage({
     if (process.env.NODE_ENV === 'dev') {
       cb(null, './assets/mood/imgs')
     } else {
-      cb(null, '/assets/mood/imgs')
+      cb(null, '/images')
     }
   },
   filename: function (req, file, cb) {
@@ -34,9 +34,15 @@ let storage = multer.diskStorage({
     filenameZipped = `${md5(tmpname)}-zipped.${ext}`
     cb(null, filename)
     setTimeout(() => {
-      images(`./assets/mood/imgs/${filename}`).save(`./assets/mood/imgs/${filenameZipped}`, {
-        quality: 50 //保存图片到文件,图片质量为50
-      })
+      if (process.env.NODE_ENV === 'dev') {
+        images(`./assets/mood/imgs/${filename}`).save(`./assets/mood/imgs/${filenameZipped}`, {
+          quality: 50 //保存图片到文件,图片质量为50
+        })
+      } else {
+        images(`/images/${filename}`).save(`/images/${filenameZipped}`, {
+          quality: 50 //保存图片到文件,图片质量为50
+        })
+      }
     }, 1000)
   }
 })
@@ -53,8 +59,8 @@ router.post('/uploadImage', upload.any(), (req, res) => {
     originalname: file.originalname,
     path: file.path,
     filename: filename,
-    filenameOnline: `http://112.124.56.144/assets/mood/imgs/${filename}`,
-    filenameOnlineZipped: `http://112.124.56.144/assets/mood/imgs/${filenameZipped}`
+    filenameOnline: `http://112.124.56.144/images/${filename}`,
+    filenameOnlineZipped: `http://112.124.56.144/images/${filenameZipped}`
   })
 })
 

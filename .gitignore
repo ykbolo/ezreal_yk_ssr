@@ -89,3 +89,4 @@ sw.*
 # Vim swap files
 *.swp
 nohup.out
+assets/mood/imgs/*
