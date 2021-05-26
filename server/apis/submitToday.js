@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 16:31:44
+ * @LastEditTime: 2021-05-26 17:24:15
  */
 import { Router } from 'express'
 import moment from 'moment'
@@ -26,7 +26,7 @@ function addSubmit(params, res) {
   let author = params.author || '匿名'
   let images = params.images || []
   let words = params.words
-  let sql = `insert into tb_xiabibi (time,words,images,author,md5) values ('${time}','${JSON.stringify(words)}','${JSON.stringify(images)}','${author}','${md5(
+  let sql = `insert into tb_xiabibi (time,words,images,author,md5) values ('${time}',${JSON.stringify(words)},'${JSON.stringify(images)}','${author}','${md5(
     time
   )}')`
   db.query(sql, (err, result) => {

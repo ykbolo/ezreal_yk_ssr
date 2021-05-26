@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-26 16:46:36
+ * @LastEditTime: 2021-05-26 17:23:05
 -->
 <template>
   <div class="container">
@@ -12,7 +12,8 @@
       <div class="d-flex m-t-30">
         <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)">
           <!-- <img :src="image" alt="" :style="{ 'object-fit': true }" /> -->
-          <van-image width="100%" height="100%" :src="image" fit="contain" />
+          <img :src="image" alt="" style="object-fit: contain" width="100%" height="100%" />
+          <!-- <van-image width="100%" height="100%" :src="image" fit="contain" /> -->
         </div>
         <label class="image-upload add m-r-30"> <input ref="input" id="imgUp" type="file" accept="image/*" @change="handle_change" class="d-none" /></label>
       </div>
