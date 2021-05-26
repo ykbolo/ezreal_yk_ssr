@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nuxt",
-    "build": "cross-env NODE_ENV=prod nuxt build",
-    "start": "cross-env NODE_ENV=prod nuxt start",
+    "build:dev": "cross-env NODE_ENV=dev nuxt build",
+    "build:prod": "cross-env NODE_ENV=prod nuxt build",
+    "start:dev": "cross-env NODE_ENV=dev nuxt start",
+    "start:prod": "cross-env NODE_ENV=prod nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
