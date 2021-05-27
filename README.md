@@ -1,4 +1,4 @@
-# y
+# ezreal_yk_ssr
 
 ## Build Setup
 
@@ -10,14 +10,14 @@ $ npm install
 $ npm run dev
 
 # build for production and launch server
-$ npm run build
-$ npm run start
+$ npm run build[dev:prod]
+$ npm run start[dev:prod]
 
 # generate static project
 $ npm run generate
 # 更新文章
 $ npm run updateMds
-# 发布静态资源
+# 同步静态资源
 $ npm run syncAssets
 ```
 
