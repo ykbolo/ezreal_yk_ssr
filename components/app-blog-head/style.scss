@@ -9,7 +9,7 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   .ez-logo {
     display: inline-block;
-    width: 200px;
+    width: 150px;
     height: 50px;
     @keyframes text1 {
       0% {
@@ -75,6 +75,10 @@
     }
   }
   .main-nav {
+    max-width: calc(100vw - 250px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     font-size: 18px;
     // float: left;
     height: 50px;

@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-26 15:56:31
+ * @LastEditTime: 2021-05-28 16:19:50
 -->
 <template>
   <div>
@@ -18,12 +18,13 @@
           <use xlink:href="#line-text" class="text"></use>
         </svg>
         <div class="main-nav">
-          <nuxt-link v-for="(el, index) in tabs" :key="index" :to="el.path">
-            {{ el.name }}
-          </nuxt-link>
+          <nuxt-link to="/list" class="t-nowrap"> Articles </nuxt-link>
+          <nuxt-link to="/Video" class="t-nowrap"> Videos </nuxt-link>
+          <nuxt-link to="/Photos" class="t-nowrap"> Photos </nuxt-link>
+          <nuxt-link to="/about" class="t-nowrap"> ME </nuxt-link>
         </div>
       </div>
-      <nuxt-link to="/mood" class="p-h-30 p-v-15 f-bold mood">MOOD</nuxt-link>
+      <nuxt-link to="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</nuxt-link>
     </div>
     <div class="head-holder"></div>
   </div>
