@@ -2,12 +2,12 @@
  * @Author: Yang Kang
  * @Date: 2021-05-18 16:16:21
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 16:55:18
+ * @LastEditTime: 2021-05-28 18:10:27
 -->
 
 <template>
   <div class="container">
-    <div id="md" class="container"></div>
+    <div id="md" class="container" v-html="marked(content)"></div>
   </div>
 </template>
 <script>
@@ -22,16 +22,6 @@
     },
     layout: 'blog',
     async asyncData({ params }) {
-      console.log(params, '---')
-      let md5 = params.md5
-      const result = await service.getArticleByMd5({ md5 })
-      return {
-        md5: params.md5,
-        items: result.items,
-        total: result.total
-      }
-    },
-    mounted() {
       var rendererMD = new marked.Renderer()
       marked.setOptions({
         renderer: new marked.Renderer(),
@@ -47,10 +37,40 @@
         smartypants: false,
         xhtml: false
       }) //基本设置
-      service.getArticleByMd5({ md5: this.md5 }).then(res => {
-        // console.log(res)
-        document.getElementById('md').innerHTML = marked(res.content)
-      })
+      console.log(params, '---')
+      let md5 = params.md5
+      const result = await service.getArticleByMd5({ md5 })
+      console.log(result)
+      return {
+        md5: params.md5,
+        content: result.content
+      }
+    },
+    data() {
+      return {
+        marked: marked
+      }
+    },
+    mounted() {
+      // var rendererMD = new marked.Renderer()
+      // marked.setOptions({
+      //   renderer: new marked.Renderer(),
+      //   highlight: function (code) {
+      //     return hljs.highlightAuto(code).value
+      //   },
+      //   pedantic: false,
+      //   gfm: true,
+      //   tables: true,
+      //   breaks: false,
+      //   sanitize: false,
+      //   smartLists: true,
+      //   smartypants: false,
+      //   xhtml: false
+      // }) //基本设置
+      // service.getArticleByMd5({ md5: this.md5 }).then(res => {
+      //   // console.log(res)
+      //   document.getElementById('md').innerHTML = marked(res.content)
+      // })
     }
   }
 </script>
