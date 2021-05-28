@@ -1,0 +1,271 @@
+/**
+  @name 布局
+ */
+
+@import '../variable';
+
+/* 位置 */
+
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
+.top-0 {
+  top: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+
+.left-100 {
+  left: 100%;
+}
+.right-100 {
+  right: 100%;
+}
+.top-100 {
+  top: 100%;
+}
+.bottom-100 {
+  bottom: 100%;
+}
+
+/* 相对 */
+
+.p-relative {
+  position: relative;
+}
+
+/* 绝对 */
+
+@mixin absolute {
+  position: absolute;
+}
+
+.p-absolute {
+  @include absolute;
+}
+.p-absolute-100 {
+  @include absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.p-absolute-center {
+  @include absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.p-absolute-center-transform {
+  @include absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 固定 */
+
+@mixin fixed {
+  position: fixed;
+}
+
+.p-fixed {
+  @include fixed;
+}
+.p-fixed-100 {
+  @include fixed;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.p-fixed-center {
+  @include fixed;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* 浮动 */
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.float-clear {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+/* 隐藏 */
+
+.d-none {
+  display: none;
+}
+
+/* 行 */
+
+.d-inline {
+  display: inline;
+}
+
+/* 块 */
+
+.d-block {
+  display: block;
+}
+
+/* 行块 */
+
+.d-inline-block {
+  display: inline-block;
+}
+
+/* 流 */
+
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-none {
+  flex: none; // flex: 0, 0, auto;
+}
+.flex-auto {
+  flex: auto; // flex: 1, 1, auto;
+}
+.flex-1 {
+  flex: 1; // flex: 1, 1, 0;
+}
+.flex-basis-0 {
+  flex-basis: 0;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-shrink-1 {
+  flex-shrink: 1;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-end {
+  justify-content: flex-end;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-content-start {
+  align-content: flex-start;
+}
+.align-content-end {
+  align-content: flex-end;
+}
+.align-content-center {
+  align-content: center;
+}
+.align-content-between {
+  align-content: space-between;
+}
+.align-content-around {
+  align-content: space-around;
+}
+.align-content-stretch {
+  align-content: stretch;
+}
+.align-self-auto {
+  align-self: auto;
+}
+.align-self-start {
+  align-self: flex-start;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-self-baseline {
+  align-self: baseline;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* object-fit */
+
+.object-fit-fill {
+  object-fit: fill;
+}
+.object-fit-contain {
+  object-fit: contain;
+}
+.object-fit-cover {
+  object-fit: cover;
+}
+.object-position-center {
+  object-position: center center;
+}

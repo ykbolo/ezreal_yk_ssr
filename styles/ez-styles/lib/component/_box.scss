@@ -1,0 +1,214 @@
+/**
+  @name 盒模型
+*/
+
+@import '../variable';
+
+/* 模型 */
+
+.box-sizing-border {
+  box-sizing: border-box;
+}
+.box-sizing-content {
+  box-sizing: content-box;
+}
+
+/* 尺寸 */
+
+$sizes: (
+  w: width,
+  h: height
+);
+$numbers: (50, 100);
+
+@each $i, $a in $sizes {
+  .#{'' + $i}-0 {
+    #{$a}: 0;
+  }
+
+  @each $j in $numbers {
+    .#{'' + $i}-#{$j} {
+      #{$a}: #{$j}#{'%'};
+    }
+  }
+}
+.w-100vw {
+  width: 100vw;
+}
+.h-100vh {
+  height: 100vh;
+}
+.w-1em {
+  width: 1em;
+}
+.h-1em {
+  height: 1em;
+}
+.w-auto {
+  width: auto;
+}
+.h-auto {
+  height: auto;
+}
+
+.min-width-0 {
+  min-width: 0;
+}
+.min-height-0 {
+  min-height: 0;
+}
+.min-height-100 {
+  min-height: 100%;
+}
+.min-height-100vh {
+  min-height: 100vh;
+}
+
+/* 内边距和外边距 */
+
+@each $a in $gaps {
+  .m-#{'' + $a} {
+    margin: #{'' + $a}px;
+  }
+  .m-h-#{'' + $a} {
+    margin-left: #{'' + $a}px;
+    margin-right: #{'' + $a}px;
+  }
+  .m-v-#{'' + $a} {
+    margin-top: #{'' + $a}px;
+    margin-bottom: #{'' + $a}px;
+  }
+  .m-l-#{'' + $a} {
+    margin-left: #{'' + $a}px;
+  }
+  .m-r-#{'' + $a} {
+    margin-right: #{'' + $a}px;
+  }
+  .m-t-#{'' + $a} {
+    margin-top: #{'' + $a}px;
+  }
+  .m-b-#{'' + $a} {
+    margin-bottom: #{'' + $a}px;
+  }
+
+  .p-#{'' + $a} {
+    padding: #{'' + $a}px;
+  }
+  .p-h-#{'' + $a} {
+    padding-left: #{'' + $a}px;
+    padding-right: #{'' + $a}px;
+  }
+  .p-v-#{'' + $a} {
+    padding-top: #{'' + $a}px;
+    padding-bottom: #{'' + $a}px;
+  }
+  .p-l-#{'' + $a} {
+    padding-left: #{'' + $a}px;
+  }
+  .p-r-#{'' + $a} {
+    padding-right: #{'' + $a}px;
+  }
+  .p-t-#{'' + $a} {
+    padding-top: #{'' + $a}px;
+  }
+  .p-b-#{'' + $a} {
+    padding-bottom: #{'' + $a}px;
+  }
+}
+
+.p-t-1 {
+  padding-top: 1px;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+.m-h-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.m-v-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.m-l-0 {
+  margin-left: 0 !important;
+}
+.m-r-0 {
+  margin-right: 0 !important;
+}
+.m-t-0 {
+  margin-top: 0 !important;
+}
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.m-auto {
+  margin: auto;
+}
+.m-h-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.m-v-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.m-l-auto {
+  margin-left: auto;
+}
+.m-r-auto {
+  margin-right: auto;
+}
+.m-t-auto {
+  margin-top: auto;
+}
+.m-b-auto {
+  margin-bottom: auto;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+.p-h-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.p-v-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.p-l-0 {
+  padding-left: 0 !important;
+}
+.p-r-0 {
+  padding-right: 0 !important;
+}
+.p-t-0 {
+  padding-top: 0 !important;
+}
+.p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+/* 溢出 */
+
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-auto-x {
+  overflow-x: auto;
+}
+.overflow-auto-y {
+  overflow-y: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-hidden-x {
+  overflow-x: hidden;
+}
+.overflow-hidden-y {
+  overflow-y: hidden;
+}
