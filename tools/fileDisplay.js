@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-12 16:01:44
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 11:20:48
+ * @LastEditTime: 2021-05-28 17:10:04
  */
 /* eslint-disable */
 const fs = require('fs').promises
@@ -27,16 +27,15 @@ async function fileDisplay(filePath, result) {
 
     for (let a of files) {
       let filedir = path.resolve(filePath, a)
-
+      console.log(a)
       let stat = await fs.stat(filedir)
       if (stat.isFile()) {
         let content = await fs.readFile(filedir, 'utf-8')
-        result.push({ name: 'filedir', content })
+        result.push({ name: 'filedir', content, title: a })
       } else {
         await fileDisplay(filedir, result)
       }
     }
-
     return result
   } catch (er) {
     console.warn(er)
@@ -45,7 +44,7 @@ async function fileDisplay(filePath, result) {
 
 fileDisplay('./assets/techs', []).then(contentArr => {
   console.log(contentArr.length)
-  db.query(`delete from tb_techs`, () => {
+  db.query(`TRUNCATE table tb_techs`, () => {
     autoInsert(0, contentArr)
   })
 })
@@ -58,14 +57,12 @@ function autoInsert(index, contentArr) {
   } else {
     // console.log(contentArr[index].content)
     let content = contentArr[index].content
-    let title = content.split('\n')[0]
-    let time = content.split('\n')[2]
-
-    console.log(title, time, content)
+    let title = contentArr[index].title?.replace(/(\d+\.)/, '').replace('.md', '')
+    let time = content.split('\n')[2]?.match(/\d+\.\d+\.\d+/)[0]
     db.query(
-      `insert into tb_techs (id,content,title,time,md5) values (${index},${JSON.stringify(contentArr[index].content)},${JSON.stringify(title)},${JSON.stringify(
+      `insert into tb_techs (content,title,time,md5) values (${JSON.stringify(contentArr[index].content)},${JSON.stringify(title)},${JSON.stringify(
         time
-      )},md5(title))`,
+      )},${JSON.stringify(md5(title))})`,
       (err, res) => {
         if (err) throw err
         autoInsert(index + 1, contentArr)
