@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-24 17:08:29
+ * @LastEditTime: 2021-05-31 17:58:03
  */
 import { Router } from 'express'
 import mysql from 'mysql'
@@ -24,7 +24,7 @@ const queryItems = params => {
   return new Promise((resolve, reject) => {
     db.query(
       // `select * from tb_articles_for_life`,
-      `select * from tb_techs LIMIT ${start},${hit};`,
+      `select * from tb_techs ORDER BY time DESC LIMIT ${start},${hit};`,
       (err, result) => {
         if (err) {
           throw err
