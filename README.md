@@ -29,6 +29,6 @@ $ npm run syncAssets
 
 3.将改动 commit、push 上去
 
-4.服务器端运行 npm run syncAssets，同步静态资源
+4.npm run updateMds 更新文章数据库
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+5.服务器端运行 npm run syncAssets，同步静态资源
