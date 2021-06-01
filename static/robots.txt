@@ -5,3 +5,17 @@ Crawl-delay: 10
 Disallow: 
 Sitemap: http://www.ezreal-yk.cn/list
 Sitemap: http://www.ezreal-yk.cn/mood
+Sitemap: http://www.ezreal-yk.cn/list?page=1
+Sitemap: http://www.ezreal-yk.cn/list?page=2
+Sitemap: http://www.ezreal-yk.cn/list?page=3
+Sitemap: http://www.ezreal-yk.cn/list?page=4
+Sitemap: http://www.ezreal-yk.cn/list?page=5
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
+Sitemap: 
