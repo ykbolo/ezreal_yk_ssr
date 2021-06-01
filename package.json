@@ -14,7 +14,8 @@
     "server:dev": "cross-env NODE_ENV=dev babel-node ./server/index.js",
     "server:prod": "cross-env NODE_ENV=prod babel-node ./server/index.js",
     "updateMds": "babel-node ./tools/fileDisplay.js",
-    "syncAssets": "rm -rf /assets && cp -a assets /assets"
+    "syncAssets": "rm -rf /assets && cp -a assets /assets",
+    "getSiteMap": "babel-node ./tools/sitemap.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
