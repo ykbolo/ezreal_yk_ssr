@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-18 16:16:21
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-28 18:10:27
+ * @LastEditTime: 2021-06-01 11:09:59
 -->
 
 <template>
@@ -14,15 +14,11 @@
   import marked from 'marked'
   import service from '../../services/index'
   import hljs from 'highlight.js'
-  import javascript from 'highlight.js/lib/languages/javascript'
   import 'highlight.js/styles/monokai-sublime.css'
   export default {
-    validate(md5) {
-      return true
-    },
     layout: 'blog',
+
     async asyncData({ params }) {
-      var rendererMD = new marked.Renderer()
       marked.setOptions({
         renderer: new marked.Renderer(),
         highlight: function (code) {
@@ -37,13 +33,21 @@
         smartypants: false,
         xhtml: false
       }) //基本设置
-      console.log(params, '---')
       let md5 = params.md5
       const result = await service.getArticleByMd5({ md5 })
-      console.log(result)
       return {
+        title: result.title,
         md5: params.md5,
         content: result.content
+      }
+    },
+    head() {
+      return {
+        title: this.title,
+        meta: [
+          { name: 'description', content: this.title },
+          { name: 'keywords', content: 'nuxt,ezreal,ezreal-yk,博客' }
+        ]
       }
     },
     data() {
@@ -51,31 +55,7 @@
         marked: marked
       }
     },
-    mounted() {
-      // var rendererMD = new marked.Renderer()
-      // marked.setOptions({
-      //   renderer: new marked.Renderer(),
-      //   highlight: function (code) {
-      //     return hljs.highlightAuto(code).value
-      //   },
-      //   pedantic: false,
-      //   gfm: true,
-      //   tables: true,
-      //   breaks: false,
-      //   sanitize: false,
-      //   smartLists: true,
-      //   smartypants: false,
-      //   xhtml: false
-      // }) //基本设置
-      // service.getArticleByMd5({ md5: this.md5 }).then(res => {
-      //   // console.log(res)
-      //   document.getElementById('md').innerHTML = marked(res.content)
-      // })
-    }
+    mounted() {}
   }
 </script>
-<style lang="scss" scoped>
-  ::v-deep pre {
-    // background: rgba(20, 55, 240, 0.1);
-  }
-</style>
+<style lang="scss" scoped></style>
