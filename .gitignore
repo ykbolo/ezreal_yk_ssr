@@ -90,3 +90,5 @@ sw.*
 *.swp
 nohup.out
 assets/mood/imgs/*
+
+*/mysql/*
