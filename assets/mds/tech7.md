@@ -127,4 +127,4 @@ class Txt2jsonSpider(scrapy.Spider):
 
 #### 结果预览
 
-![avatar](http://112.124.56.144/images/tech/7/preview.bmp)
+![avatar](http://ezreal-yk.cn/images/tech/7/preview.bmp)

@@ -4,7 +4,7 @@
 
 #### 参考价￥ 449
 
-![avatar](http://112.124.56.144/images/life/2/mouse7.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse7.jpg)
 
 相信在中高端的鼠标领域，罗技是全球首屈一指的厂商了，特别是 G 系列，涵盖了中高端以及无线领域。今天分享的一款鼠标是罗技的 G603 无线鼠标。
 
@@ -31,23 +31,23 @@
 
 颜值方面就震撼了我，他不想 G502 那样棱角分明，也不像 G304 那样非常圆润，而是程曲线型。
 
-![avatar](http://112.124.56.144/images/life/2/mouse3.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse3.jpg)
 
-![avatar](http://112.124.56.144/images/life/2/mouse8.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse8.jpg)
 
 G603 正面：dpi 调节按键及指示灯，阻尼滚轮，可拆卸盖板
 
-![avatar](http://112.124.56.144/images/life/2/mouse1.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse1.jpg)
 
 G603 背面： LO HI 蓝牙与 2.4g 切换按键
 
-![avatar](http://112.124.56.144/images/life/2/mouse2.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse2.jpg)
 
 G603 内部：组合式设计，可拆卸上盖板，接收器储存槽
 
-![avatar](http://112.124.56.144/images/life/2/mouse4.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse4.jpg)
 
-![avatar](http://112.124.56.144/images/life/2/mouse6.jpg)
+![avatar](http://ezreal-yk.cn/images/life/2/mouse6.jpg)
 
 造型上偏大，适合手比较大的用户，我的手比较小，握持感时这样的。手感因人而异，比起 M220 那样的入门蓝牙便携式鼠标差别是巨大的
 

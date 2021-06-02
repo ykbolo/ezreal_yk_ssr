@@ -67,6 +67,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: 'ezreal-yk.cn.w.kunlunpi.com',
     extend(config) {
       config.plugins.push(
         new Webpack.DefinePlugin({

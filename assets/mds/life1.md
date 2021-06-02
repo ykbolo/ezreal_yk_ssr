@@ -4,24 +4,24 @@
 
 #### 参考价￥ 1200
 
-![avatar](http://112.124.56.144/images/life/1/hearphone5.jpg)
+![avatar](http://ezreal-yk.cn/images/life/1/hearphone5.jpg)
 
 说起索尼大家都会联想到一个梗，‘索尼大法好’。众所周知，索尼在影像音乐等多个领域有着领先地位。这款索尼的头戴式降噪耳机定位于入门级别的降噪耳机，配色多样化，我的这
 款是没有红色那么骚的浅蓝色，购于 2018 年 8 月，已经有点旧了
 
-![avatar](http://112.124.56.144/images/life/1/hearphone2.jpg)
+![avatar](http://ezreal-yk.cn/images/life/1/hearphone2.jpg)
 
 上头试下，有伸缩调节，对于我这种头比较大的，需要展开 5cm 左右
 
-![avatar](http://112.124.56.144/images/life/1/hearphone1.jpg)
+![avatar](http://ezreal-yk.cn/images/life/1/hearphone1.jpg)
 
 有比较丰富的手势操作,左耳支持 nfc 一键连接，告别蓝牙连接的繁琐。
 
-![avatar](http://112.124.56.144/images/life/1/hearphone4.jpg)
+![avatar](http://ezreal-yk.cn/images/life/1/hearphone4.jpg)
 
 全套配件清单
 
-![avatar](http://112.124.56.144/images/life/1/hearphone3.jpg)
+![avatar](http://ezreal-yk.cn/images/life/1/hearphone3.jpg)
 
 有一说一，之前没有带过降噪耳机的我深深的被降噪给震撼住了，虽然是两三年前的产品了，但是放在今天，降噪和音质也能秒杀跟他一个价位的 beats 一条街。
 

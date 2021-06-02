@@ -9,7 +9,7 @@
 
 #### 需要工具
 
-- 上期爬下来的一系列 json 文件 ![avatar](http://112.124.56.144/images/tech/8/json.jpg)
+- 上期爬下来的一系列 json 文件 ![avatar](http://ezreal-yk.cn/images/tech/8/json.jpg)
 - elastic-search-7.x
 - elastic-search-head/kibana
 - nodejs
@@ -69,7 +69,7 @@ autoRun()
 
 打开 elasticsearch-head，输入查询条件，得到匹配结果
 
-![avatar](http://112.124.56.144/images/tech/8/preview.jpg)
+![avatar](http://ezreal-yk.cn/images/tech/8/preview.jpg)
 
 #### 参考文档
 
