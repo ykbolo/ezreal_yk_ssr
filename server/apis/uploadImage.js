@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-26 17:40:15
+ * @LastEditTime: 2021-06-02 14:54:27
  */
 
 import images from 'images'
@@ -59,8 +59,8 @@ router.post('/uploadImage', upload.any(), (req, res) => {
     originalname: file.originalname,
     path: file.path,
     filename: filename,
-    filenameOnline: `http://112.124.56.144/images/${filename}`,
-    filenameOnlineZipped: `http://112.124.56.144/images/${filenameZipped}`
+    filenameOnline: `http://ezreal-yk.cn/images/${filename}`,
+    filenameOnlineZipped: `http://ezreal-yk.cn/images/${filenameZipped}`
   })
 })
 
