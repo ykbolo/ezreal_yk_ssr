@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-04 11:39:55
+ * @LastEditTime: 2021-06-04 11:50:21
 -->
 <template>
   <div class="container">
@@ -11,17 +11,13 @@
       <a-textarea placeholder="输入文字描述" v-model="words" :auto-size="{ minRows: 3, maxRows: 5 }" class="m-t-30" />
       <div class="d-flex m-t-30">
         <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)">
-          <!-- <img :src="image" alt="" :style="{ 'object-fit': true }" /> -->
           <img :src="image" alt="" style="object-fit: contain" width="100%" height="100%" />
-          <!-- <van-image width="100%" height="100%" :src="image" fit="contain" /> -->
         </div>
         <label class="image-upload add m-r-30"> <input ref="input" id="imgUp" type="file" accept="image/*" @change="handle_change" class="d-none" /></label>
       </div>
       <div class="t-right">
         <span class="submit btn btn-primary m-t-15 d-inline-block" @click="submit()"> 发布 </span>
       </div>
-      <!-- <div class="add m-t-30" @click="clickInput"></div> -->
-      <!-- <ui-image-upload class="img m-t-10" width="50px" height="50px" :initSrc="logo" @change="handle_change"></ui-image-upload> -->
     </div>
     <card v-for="item in items" :item="item" :key="item.md5"></card>
   </div>

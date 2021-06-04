@@ -2,7 +2,24 @@
   <div class="container">
     <div class="home">
       <div class="main-container">
-        <a-input-search class="m-t-30" v-model="keyword" placeholder="请输入关键字" enter-button="搜索" @search="submit" />
+        <a-input-search
+          class="m-t-30"
+          v-model="keyword"
+          placeholder="请输入关键字"
+          enter-button="搜索"
+          @search="submit"
+          @blur="handleBlur()"
+          @focus="
+            () => {
+              showLenovo = true
+            }
+          "
+        />
+        <div class="lenovo b-gray-2" tabindex="0" v-show="showLenovo">
+          <nuxt-link :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"
+            ><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div
+          ></nuxt-link>
+        </div>
         <a-spin v-if="loading" />
         <div class="p-v-20" v-else>
           <div class="p-v-15">
@@ -41,7 +58,25 @@
     },
     data() {
       return {
-        loading: false
+        loading: false,
+        titles: [],
+        total: 0,
+        keyword: '',
+        showLenovo: false
+      }
+    },
+    watch: {
+      keyword(newV) {
+        if (newV) {
+          service.searchMds({ keyword: newV }).then(res => {
+            this.titles = res.items.slice(0, 10)
+            this.titles.forEach(element => {
+              element.title = element.title.replace(newV, `<em>${newV}</em>`)
+            })
+            this.$forceUpdate()
+            this.total = res.total
+          })
+        }
       }
     },
     mounted() {
@@ -49,6 +84,7 @@
     },
     methods: {
       submit(keyword) {
+        this.showLenovo = false
         if (!keyword) {
           this.$message.info('请输入关键词再试')
           return
@@ -59,6 +95,11 @@
           this.total = res.total
           this.loading = false
         })
+      },
+      handleBlur() {
+        setTimeout(() => {
+          this.showLenovo = false
+        }, 200)
       }
     }
   }
