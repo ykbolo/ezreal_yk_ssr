@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:52:17
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 16:55:08
+ * @LastEditTime: 2021-06-03 18:15:04
  */
 import { createDefaultRequest } from '../core/request'
 
@@ -21,10 +21,14 @@ const addOneSubmit = params => {
 const getSubmitsFromMysql = params => {
   return createDefaultRequest('/getSubmitsFromMysql', params)
 }
+const searchMds = params => {
+  return createDefaultRequest('/searchMds', params)
+}
 export default {
   getPicsFromServer,
   getArticleByMd5,
   getMdFromMysql,
   addOneSubmit,
-  getSubmitsFromMysql
+  getSubmitsFromMysql,
+  searchMds
 }

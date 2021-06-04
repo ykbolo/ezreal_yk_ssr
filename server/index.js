@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:01:24
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-25 16:54:05
+ * @LastEditTime: 2021-06-03 18:12:28
  */
 // const fs = require('fs')
 // const path = require('path')
@@ -25,6 +25,7 @@ app.use('/api', require('./apis/get2021Day'))
 app.use('/api', require('./apis/uploadImage'))
 app.use('/api', require('./apis/submitToday'))
 app.use('/api', require('./apis/getSubmitsFromMysql'))
+app.use('/api', require('./apis/searchMds'))
 // // app.use('/apis/getMdFromLocal', require('./apis/getMdFromLocal'))
 app.get('/getMdFromLocal', function (req, res, next) {
   res.end(
