@@ -2,13 +2,13 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-26 17:23:05
+ * @LastEditTime: 2021-06-04 11:39:55
 -->
 <template>
   <div class="container">
     <div class="pad p-30">
       <a-input v-model="author" placeholder="输入昵称"></a-input>
-      <a-textarea placeholder="输入文字描述" auto-size v-model="words" class="m-t-30" />
+      <a-textarea placeholder="输入文字描述" v-model="words" :auto-size="{ minRows: 3, maxRows: 5 }" class="m-t-30" />
       <div class="d-flex m-t-30">
         <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)">
           <!-- <img :src="image" alt="" :style="{ 'object-fit': true }" /> -->
@@ -17,7 +17,9 @@
         </div>
         <label class="image-upload add m-r-30"> <input ref="input" id="imgUp" type="file" accept="image/*" @change="handle_change" class="d-none" /></label>
       </div>
-      <div class="submit btn btn-primary w-100" @click="submit()">发布</div>
+      <div class="t-right">
+        <span class="submit btn btn-primary m-t-15 d-inline-block" @click="submit()"> 发布 </span>
+      </div>
       <!-- <div class="add m-t-30" @click="clickInput"></div> -->
       <!-- <ui-image-upload class="img m-t-10" width="50px" height="50px" :initSrc="logo" @change="handle_change"></ui-image-upload> -->
     </div>
@@ -112,9 +114,8 @@
 </script>
 <style lang="scss" scoped>
   .pad {
-    border-radius: 10px;
+    border: 1px solid #e9e9e9;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.08);
-    background: rgba(70, 127, 215, 0.1);
   }
   .add {
     width: 100px;
