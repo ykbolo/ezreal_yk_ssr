@@ -13,6 +13,9 @@
         </svg>
       </div>
       <a-input-search class="m-t-30" placeholder="输入关键词" enter-button="搜索" size="large" @search="submit" />
+      <div class="t-right m-t-15">
+        <nuxt-link to="/list?page=1">查看全部文章</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +23,7 @@
 <script>
   // import service from '~/services'
   export default {
+    layout: 'blog',
     methods: {
       submit(keywords) {
         if (!keywords) {

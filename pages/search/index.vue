@@ -5,7 +5,12 @@
         <a-input-search class="m-t-30" v-model="keyword" placeholder="请输入关键字" enter-button="搜索" @search="submit" />
         <a-spin v-if="loading" />
         <div class="p-v-20" v-else>
-          <div class="p-v-15">共{{ total }}条搜索结果</div>
+          <div class="p-v-15">
+            共{{ total || 0 }}条搜索结果
+
+            <span>没找到搜索结果?</span>
+            <nuxt-link to="/list?page=1">查看全部</nuxt-link>
+          </div>
           <div v-for="(item, index) in items" :key="item.md5" class="list-item p-20" :class="{ 'b-t-blue': index === 0 }">
             <a class="list-title f-20 f-blue" :href="'/detail/' + item.md5" target="_blank">{{ index + 1 }}. {{ item.title }}</a>
             <div class="row m-t-10">
@@ -24,13 +29,14 @@
 <script>
   import service from '~/services'
   export default {
+    layout: 'blog',
     async asyncData({ query }) {
       let keyword = query.keyword || ''
       let res = await service.searchMds({ keyword })
       return {
         keyword,
-        total: res.total,
-        items: res.items
+        total: res.total || 0,
+        items: res.items || []
       }
     },
     data() {
