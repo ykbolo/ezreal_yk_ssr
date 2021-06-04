@@ -2,12 +2,12 @@
  * @Author: Yang Kang
  * @Date: 2021-05-18 16:16:21
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-03 12:02:12
+ * @LastEditTime: 2021-06-04 10:11:12
 -->
 
 <template>
   <div class="container">
-    <div id="md" class="container" v-html="marked(content)"></div>
+    <div id="md" class="container markdown" v-html="marked(content)"></div>
     <div class="row p-15">
       <div class="col-4">
         <nuxt-link class="pre d-flex" :to="`/detail/${pre.md5}`">

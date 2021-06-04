@@ -1,1 +1,1 @@
-import './markdown.css'
+import './markdown.scss'
