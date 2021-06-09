@@ -1,9 +1,3 @@
-/*
- * @Author: Yang Kang
- * @Date: 2021-05-06 15:22:01
- * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-09 10:06:36
- */
 import express from 'express'
 import mysql from 'mysql'
 import config from '../../config/mysql'
@@ -16,12 +10,11 @@ db.connect(err => {
   if (err) {
     throw err
   }
-  console.log('数据库连接成功！')
 })
 
 const queryItems = params => {
   const [start, hit] = [+params.start, +params.hit]
-  return new Promise<{ images: string }[]>((resolve, reject) => {
+  return new Promise<{ images: string }[]>(resolve => {
     db.query(
       // `select * from tb_articles_for_life`,
       `select * from tb_xiabibi LIMIT ${start},${hit};`,
@@ -35,7 +28,7 @@ const queryItems = params => {
   })
 }
 const queryCount = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     db.query('select count(*) from tb_xiabibi', (err, result) => {
       if (err) {
         throw err
@@ -44,7 +37,7 @@ const queryCount = () => {
     })
   })
 }
-function getMdFromMysql(params, res) {
+function getSubmitsFromMysql(params, res) {
   Promise.all([queryItems(params), queryCount()]).then(([items, total]) => {
     items.forEach(item => {
       item.images = JSON.parse(item.images)
@@ -56,8 +49,7 @@ function getMdFromMysql(params, res) {
   })
 }
 
-router.post('/getSubmitsFromMysql', function (req, res, next) {
-  console.log(req.body)
-  getMdFromMysql(req.body, res)
+router.post('/getSubmitsFromMysql', function (req, res) {
+  getSubmitsFromMysql(req.body, res)
 })
 module.exports = router

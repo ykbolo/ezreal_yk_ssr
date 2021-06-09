@@ -1,9 +1,3 @@
-/*
- * @Author: Yang Kang
- * @Date: 2021-05-06 15:22:01
- * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-09 14:49:55
- */
 import express from 'express'
 import moment from 'moment'
 import mysql from 'mysql'
@@ -17,12 +11,10 @@ db.connect(err => {
   if (err) {
     throw err
   }
-  console.log('数据库连接成功！')
 })
 
 function addSubmit(params, res) {
   let time = moment().format('YYYY-MM-DD HH:mm:ss')
-  console.log(time)
   let author = params.author || '匿名'
   let images = params.images || []
   let words = params.words
@@ -41,7 +33,7 @@ function addSubmit(params, res) {
   })
 }
 
-router.post('/submitToday', function (req, res, next) {
+router.post('/submitToday', function (req, res) {
   addSubmit(req.body, res)
 })
 module.exports = router

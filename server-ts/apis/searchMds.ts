@@ -1,9 +1,3 @@
-/*
- * @Author: Yang Kang
- * @Date: 2021-05-06 15:22:01
- * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-09 14:49:48
- */
 import express from 'express'
 import mysql from 'mysql'
 import config from '../../config/mysql'
@@ -16,7 +10,6 @@ db.connect(err => {
   if (err) {
     throw err
   }
-  console.log('数据库连接成功！')
 })
 
 function getMdFromMysql(params, res) {
@@ -30,7 +23,7 @@ function getMdFromMysql(params, res) {
   })
 }
 
-router.post('/searchMds', function (req, res, next) {
+router.post('/searchMds', function (req, res) {
   getMdFromMysql(req.body, res)
 })
 module.exports = router

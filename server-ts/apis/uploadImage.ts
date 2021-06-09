@@ -1,10 +1,3 @@
-/*
- * @Author: Yang Kang
- * @Date: 2021-05-06 15:22:01
- * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-08 17:00:43
- */
-
 import images from 'images'
 
 const express = require('express')

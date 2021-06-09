@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-09 10:06:28
+ * @LastEditTime: 2021-06-09 15:07:32
  */
 import express from 'express'
 import mysql from 'mysql'
@@ -16,26 +16,21 @@ db.connect(err => {
   if (err) {
     throw err
   }
-  console.log('数据库连接成功！')
 })
 
 const queryItems = params => {
   const [start, hit] = [+params.start, +params.hit]
-  return new Promise((resolve, reject) => {
-    db.query(
-      // `select * from tb_articles_for_life`,
-      `select * from tb_techs ORDER BY time DESC LIMIT ${start},${hit};`,
-      (err, result) => {
-        if (err) {
-          throw err
-        }
-        resolve(result)
+  return new Promise(resolve => {
+    db.query(`select * from tb_techs ORDER BY time DESC LIMIT ${start},${hit};`, (err, result) => {
+      if (err) {
+        throw err
       }
-    )
+      resolve(result)
+    })
   })
 }
 const queryCount = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     db.query('select count(*) from tb_techs', (err, result) => {
       if (err) {
         throw err
@@ -53,8 +48,7 @@ function getMdFromMysql(params, res) {
   })
 }
 
-router.post('/getMdFromMysql', function (req, res, next) {
-  console.log(req.body)
+router.post('/getMdFromMysql', function (req, res) {
   getMdFromMysql(req.body, res)
 })
 module.exports = router
