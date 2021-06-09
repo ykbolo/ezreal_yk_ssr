@@ -11,8 +11,8 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "server:dev": "cross-env NODE_ENV=dev babel-node ./server/index.js",
-    "server:prod": "cross-env NODE_ENV=prod babel-node ./server/index.js",
+    "server:dev": "cross-env NODE_ENV=dev jiti ./server-ts/index.ts",
+    "server:prod": "cross-env NODE_ENV=prod jiti ./server-ts/index.ts",
     "updateMds": "babel-node ./tools/fileDisplay.js",
     "syncAssets": "rm -rf /assets && cp -a assets /assets",
     "getSiteMap": "babel-node ./tools/sitemap.js"
