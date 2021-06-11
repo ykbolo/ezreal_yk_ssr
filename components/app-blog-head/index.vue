@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-01 11:51:44
+ * @LastEditTime: 2021-06-11 16:03:02
 -->
 <template>
   <div>
@@ -20,8 +20,8 @@
         ></nuxt-link>
         <div class="main-nav">
           <nuxt-link to="/list?page=1" class="t-nowrap"> Articles </nuxt-link>
-          <nuxt-link to="/Video" class="t-nowrap"> Videos </nuxt-link>
-          <nuxt-link to="/Photos" class="t-nowrap"> Photos </nuxt-link>
+          <nuxt-link to="/video" class="t-nowrap"> Videos </nuxt-link>
+          <nuxt-link to="/photos" class="t-nowrap"> Photos </nuxt-link>
           <nuxt-link to="/about" class="t-nowrap"> ME </nuxt-link>
         </div>
       </div>

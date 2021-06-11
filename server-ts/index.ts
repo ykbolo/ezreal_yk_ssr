@@ -17,5 +17,5 @@ app.use('/api', require('./apis/uploadImage'))
 app.use('/api', require('./apis/submitToday'))
 app.use('/api', require('./apis/getSubmitsFromMysql'))
 app.use('/api', require('./apis/searchMds'))
-
+app.use('/api', require('./apis/getPicJson'))
 app.listen(9003)
