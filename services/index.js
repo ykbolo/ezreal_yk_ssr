@@ -7,28 +7,32 @@
 import { createDefaultRequest } from '../core/request'
 
 const getPicsFromServer = params => {
-  return createDefaultRequest('/getPicsFromServer', params)
+    return createDefaultRequest('/getPicsFromServer', params)
 }
 const getArticleByMd5 = params => {
-  return createDefaultRequest('/getArticleByMd5', params)
+    return createDefaultRequest('/getArticleByMd5', params)
 }
 const getMdFromMysql = params => {
-  return createDefaultRequest('/getMdFromMysql', params)
+    return createDefaultRequest('/getMdFromMysql', params)
 }
 const addOneSubmit = params => {
-  return createDefaultRequest('/submitToday', params)
+    return createDefaultRequest('/submitToday', params)
 }
 const getSubmitsFromMysql = params => {
-  return createDefaultRequest('/getSubmitsFromMysql', params)
+    return createDefaultRequest('/getSubmitsFromMysql', params)
 }
 const searchMds = params => {
-  return createDefaultRequest('/searchMds', params)
+    return createDefaultRequest('/searchMds', params)
+}
+const getPicJson = params => {
+    return createDefaultRequest('/getPicJson', params)
 }
 export default {
-  getPicsFromServer,
-  getArticleByMd5,
-  getMdFromMysql,
-  addOneSubmit,
-  getSubmitsFromMysql,
-  searchMds
+    getPicsFromServer,
+    getArticleByMd5,
+    getMdFromMysql,
+    addOneSubmit,
+    getSubmitsFromMysql,
+    searchMds,
+    getPicJson
 }

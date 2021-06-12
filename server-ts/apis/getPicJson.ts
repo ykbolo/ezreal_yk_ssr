@@ -33,6 +33,11 @@ async function loadTree(filePath, obj) {
 }
 
 router.post('/getPicJson', function (req, res) {
+  directory = {
+    path: './assets/pics',
+    name: '图片库',
+    children: []
+  }
   loadTree('./assets/pics', directory).then(() => {
     res.send({
       prePath: 'http://ezreal-yk.cn',
