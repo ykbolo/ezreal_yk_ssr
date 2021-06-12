@@ -16,9 +16,7 @@
           "
         />
         <div class="lenovo b-gray-2" tabindex="0" v-show="showLenovo">
-          <nuxt-link :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"
-            ><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div
-          ></nuxt-link>
+          <a :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div></a>
         </div>
         <a-spin v-if="loading" />
         <div class="p-v-20" v-else>
@@ -26,7 +24,7 @@
             共{{ total || 0 }}条搜索结果
 
             <span>没找到搜索结果?</span>
-            <nuxt-link to="/list?page=1">查看全部</nuxt-link>
+            <a to="/list?page=1">查看全部</a>
           </div>
           <div v-for="(item, index) in items" :key="item.md5" class="list-item p-20" :class="{ 'b-t-blue': index === 0 }">
             <a class="list-title f-20 f-blue" :href="'/detail/' + item.md5" target="_blank">{{ index + 1 }}. {{ item.title }}</a>

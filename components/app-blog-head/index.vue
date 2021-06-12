@@ -8,7 +8,7 @@
   <div>
     <div class="app-blog-head justify-content-between align-items-center">
       <div class="p-relative d-flex">
-        <nuxt-link to="/">
+        <a to="/">
           <svg class="ez-logo">
             <symbol id="line-text">
               <text text-anchor="middle" x="50%" y="50%" dy=".4em">EZREAL-YORK</text>
@@ -17,15 +17,15 @@
             <use xlink:href="#line-text" class="text"></use>
             <use xlink:href="#line-text" class="text"></use>
             <use xlink:href="#line-text" class="text"></use></svg
-        ></nuxt-link>
+        ></a>
         <div class="main-nav">
-          <nuxt-link to="/list?page=1" class="t-nowrap"> Articles </nuxt-link>
-          <nuxt-link to="/video" class="t-nowrap"> Videos </nuxt-link>
-          <nuxt-link to="/photos" class="t-nowrap"> Photos </nuxt-link>
-          <nuxt-link to="/about" class="t-nowrap"> ME </nuxt-link>
+          <a to="/list?page=1" class="t-nowrap"> Articles </a>
+          <a to="/video" class="t-nowrap"> Videos </a>
+          <a to="/photos" class="t-nowrap"> Photos </a>
+          <a to="/about" class="t-nowrap"> ME </a>
         </div>
       </div>
-      <nuxt-link to="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</nuxt-link>
+      <a to="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</a>
     </div>
     <div class="head-holder"></div>
   </div>

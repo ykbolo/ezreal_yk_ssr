@@ -10,17 +10,15 @@
     <div id="md" class="container markdown" v-html="marked(content)"></div>
     <div class="row p-15">
       <div class="col-4">
-        <nuxt-link class="pre d-flex" :to="`/detail/${pre.md5}`">
+        <a class="pre d-flex" :to="`/detail/${pre.md5}`">
           <img src="./images/left.svg" alt="" width="16px" />
-          {{ pre.title }}</nuxt-link
+          {{ pre.title }}</a
         >
       </div>
       <div class="col-2"></div>
       <div class="col-2"></div>
       <div class="col-4 t-right">
-        <nuxt-link class="next d-flex justify-content-end" :to="`/detail/${next.md5}`">
-          {{ next.title }} <img src="./images/right.svg" alt="" width="16px"
-        /></nuxt-link>
+        <a class="next d-flex justify-content-end" :to="`/detail/${next.md5}`"> {{ next.title }} <img src="./images/right.svg" alt="" width="16px" /></a>
       </div>
     </div>
   </div>

@@ -28,12 +28,10 @@
       />
 
       <div class="lenovo b-gray-2" tabindex="0" v-show="showLenovo">
-        <nuxt-link :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"
-          ><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div
-        ></nuxt-link>
+        <a :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div></a>
       </div>
       <div class="t-right m-t-15">
-        <nuxt-link to="/list?page=1">查看全部文章</nuxt-link>
+        <a to="/list?page=1">查看全部文章</a>
       </div>
     </div>
   </div>
