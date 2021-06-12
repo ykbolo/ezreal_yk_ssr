@@ -32,6 +32,7 @@
   import service from '@/services/index'
   import aTreeNodeComponent from './components/a-tree-node-component'
   export default {
+    layout: 'blog',
     async asyncData() {
       let res = await service.getPicJson({})
       return {

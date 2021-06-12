@@ -31,7 +31,7 @@
         <a :to="'/detail/' + item.md5" v-for="item in titles" :key="item.title"><div class="p-v-5 p-h-5 b-b-gray-2 f-dark" v-html="item.title"></div></a>
       </div>
       <div class="t-right m-t-15">
-        <a to="/list?page=1">查看全部文章</a>
+        <a href="/list?page=1">查看全部文章</a>
       </div>
     </div>
   </div>

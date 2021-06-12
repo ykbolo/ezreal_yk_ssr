@@ -24,7 +24,7 @@
             共{{ total || 0 }}条搜索结果
 
             <span>没找到搜索结果?</span>
-            <a to="/list?page=1">查看全部</a>
+            <a href="/list?page=1">查看全部</a>
           </div>
           <div v-for="(item, index) in items" :key="item.md5" class="list-item p-20" :class="{ 'b-t-blue': index === 0 }">
             <a class="list-title f-20 f-blue" :href="'/detail/' + item.md5" target="_blank">{{ index + 1 }}. {{ item.title }}</a>
