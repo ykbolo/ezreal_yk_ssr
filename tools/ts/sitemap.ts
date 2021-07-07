@@ -1,42 +1,34 @@
-const fs = require('fs').promises
-var path = require('path') //解析需要遍历的文件夹
-const express = require('express')
-const app: Object = express()
+const fs = require('fs')
 const mysql = require('mysql')
 const config = require('../../config/mysql')
 const db = mysql.createConnection(config)
-const md5 = require('md5-node')
+const XMLWriter = require('xml-writer')
+const dayjs = require('dayjs')
+const prefix = 'http://ezreal-yk.cn/detail/'
+/**
+ * 写xml
+ */
+const writeUrlTagInXML = (urlSetTag, locText, time) => {
+  urlSetTag.startElement('url', '').writeElement('loc', locText).writeElement('lastmod', time).endElement()
+}
 db.connect((err: Object) => {
   if (err) throw err
   console.log('数据库连接成功！')
-})
-
-console.log(process.argv)
-let prefix = process.argv?.[2]
-let getArticles = () => {
-  interface resObj {
-    md5: string
-  }
-  db.query(`select * from tb_techs`, (err: Object, res: Array<resObj>): void => {
-    if (err) throw err
-    let count = res.length
-    let md5List: string[] = []
-    fs.writeFile('./sitemap.txt', '')
-    writeCommonPage()
-    res.forEach(element => {
-      // interface element {
-      //   md5?: string
-      // }
-      md5List.push(element.md5)
-      writeSiteMap(element.md5)
+  db.query('select * from tb_techs', (err, res) => {
+    console.log(res)
+    // ----------------xml生成开始
+    const xw = new XMLWriter()
+    xw.startDocument('1.0', 'UTF-8')
+    const urlSetTag = xw.startElement('urlset')
+    const siteMapArr: any = res
+    const time = dayjs().format('YYYY-MM-DD HH:mm:ss')
+    const timeStamp = dayjs().unix()
+    for (let i = 0; i < siteMapArr.length; i++) {
+      writeUrlTagInXML(urlSetTag, prefix + siteMapArr[i]['md5'], time)
+    }
+    xw.endDocument()
+    fs.writeFile(`webc_pc_${timeStamp}.xml`, xw.toString(), { flag: 'w' }, (): void => {
+      console.log(`****sitemap文件已生成->webc_pc_${timeStamp}.xml`)
     })
-    console.log(count, md5List)
   })
-}
-let writeCommonPage = () => {
-  fs.writeFile('./sitemap.txt', prefix + ' ' + 'http://www.ezreal-yk.cn/mood' + '\n', { flag: 'a' })
-}
-let writeSiteMap = (txt: String): void => {
-  fs.writeFile('./sitemap.txt', prefix + ' ' + 'http://www.ezreal-yk.cn/detail/' + txt + '\n', { flag: 'a' })
-}
-getArticles()
+})
