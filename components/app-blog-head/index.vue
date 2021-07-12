@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-12 14:57:00
+ * @LastEditTime: 2021-07-12 15:35:13
 -->
 <template>
   <div>
@@ -19,10 +19,10 @@
             <use xlink:href="#line-text" class="text"></use></svg
         ></a>
         <div class="main-nav">
-          <a href="/list?page=1" class="t-nowrap"> Articles </a>
-          <a href="/video" class="t-nowrap"> Videos </a>
-          <a href="/photos" class="t-nowrap"> Photos </a>
-          <a href="/about" class="t-nowrap"> ME </a>
+          <a href="/list?page=1" class="t-nowrap"> 技术文档 </a>
+          <a href="/video" class="t-nowrap f-gray disabled"> 视频 </a>
+          <a href="/photos" class="t-nowrap"> 照片库 </a>
+          <a href="/about" class="t-nowrap"> 关于 </a>
         </div>
       </div>
       <div>
