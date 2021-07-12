@@ -61,7 +61,10 @@ export default {
     // https://go.nuxtjs.dev/eslint
     // '@nuxtjs/eslint-module',
   ],
-
+  serverMiddleware: [
+    // API middleware
+    '~/server-middleware/server-ts/index.ts'
+  ],
   // Modules: https://go.nuxtjs.dev/config-modules
   // modules: ['@nuxtjs/axios', '@nuxtjs/proxy'],
 
