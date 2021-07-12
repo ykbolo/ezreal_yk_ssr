@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:46:53
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-05-28 16:13:24
+ * @LastEditTime: 2021-07-12 10:58:47
  */
 import axios from 'axios'
 import queryString from '../query-string'
@@ -15,7 +15,8 @@ const _createRequest = (host, request) => {
       console.log(params, 222)
       return queryString.stringify(params)
     },
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
+    withCredentials: true
   })
   clientRequest.interceptors.response.use(function (response) {
     return response.data

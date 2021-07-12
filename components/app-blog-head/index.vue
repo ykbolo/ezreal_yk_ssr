@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-11 16:03:02
+ * @LastEditTime: 2021-07-12 14:57:00
 -->
 <template>
   <div>
@@ -25,7 +25,11 @@
           <a href="/about" class="t-nowrap"> ME </a>
         </div>
       </div>
-      <a href="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</a>
+      <div>
+        <a href="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</a>
+        <a href="/login" class="p-h-15 p-v-15 f-bold mood" v-if="!isLogin">登录</a>
+        <a class="p-h-15 p-v-15 f-bold mood" v-else>{{ username }}</a>
+      </div>
     </div>
     <div class="head-holder"></div>
   </div>
