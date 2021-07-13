@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-07-08 18:03:02
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-12 15:31:07
+ * @LastEditTime: 2021-07-13 11:19:41
  */
 import express from 'express'
 import { create } from '../../core/mysql'
@@ -59,8 +59,8 @@ const login = async (req, res) => {
   if (!req.cookies.token || req.cookies.token !== req.sessionID) {
     res.clearCookie('token')
     res.clearCookie('username')
-    res.cookie('token', req.sessionID, { maxAge: 86400, httpOnly: false, sameSite: 'None', secure: true })
-    res.cookie('username', req.session.username, { maxAge: 86400, httpOnly: false, sameSite: 'None', secure: true })
+    res.cookie('token', req.sessionID, { maxAge: 86400, httpOnly: false, sameSite: 'None', secure: false })
+    res.cookie('username', req.session.username, { maxAge: 86400, httpOnly: false, sameSite: 'Lax', secure: false })
   }
   res.send({
     status: 1,
