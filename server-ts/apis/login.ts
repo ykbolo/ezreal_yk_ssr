@@ -59,7 +59,7 @@ const login = async (req, res) => {
   if (!req.cookies.token || req.cookies.token !== req.sessionID) {
     res.clearCookie('token')
     res.clearCookie('username')
-    res.cookie('token', req.sessionID, { maxAge: 86400, httpOnly: false, sameSite: 'None', secure: false })
+    res.cookie('token', req.sessionID, { maxAge: 86400, httpOnly: false, sameSite: 'Lax', secure: false })
     res.cookie('username', req.session.username, { maxAge: 86400, httpOnly: false, sameSite: 'Lax', secure: false })
   }
   res.send({
