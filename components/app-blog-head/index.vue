@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-12 15:35:13
+ * @LastEditTime: 2021-07-13 10:13:55
 -->
 <template>
   <div>
@@ -36,4 +36,4 @@
 </template>
 
 <script src="./component.js"></script>
-<style lang="scss" src="./style.scss"></style>
+<style lang="scss" src="./style.scss" scoped></style>

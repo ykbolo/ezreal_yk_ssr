@@ -103,7 +103,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .b-t-blue {
     border-top: 1.5px solid #e9e9e9;
   }
