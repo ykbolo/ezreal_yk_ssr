@@ -11,7 +11,7 @@ import { RowDataPacket } from 'mysql2'
 import md5 from 'md5-node'
 const router = express.Router()
 interface User extends RowDataPacket {
-  nickyname: string
+  username: string
 }
 
 const DoUserNotExist = async (req, res) => {
@@ -53,8 +53,8 @@ const login = async (req, res) => {
     return
   }
   // 登录成功
-  let theUser: any = _.pick(userAwait[0][0], ['nickyname'])
-  req.session.username = theUser.nickyname
+  let theUser: any = _.pick(userAwait[0][0], ['username'])
+  req.session.username = theUser.username
   // 如果前端没有设置cookie，或者cookie已经过期
   if (!req.cookies.token || req.cookies.token !== req.sessionID) {
     res.clearCookie('token')

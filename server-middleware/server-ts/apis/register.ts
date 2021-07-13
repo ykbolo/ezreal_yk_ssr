@@ -14,7 +14,7 @@ const register = async (req, res) => {
   const count = countAwait?.[0]?.[0]?.['count(1)']
   console.log(count)
   const userAwait = await pool.query('select * from tb_user where ;')
-  // const [nickyName,]
+  // const [username,]
 }
 
 router.post('/register', function (req, res) {

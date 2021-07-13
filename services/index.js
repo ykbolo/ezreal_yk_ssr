@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:52:17
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-09 17:43:11
+ * @LastEditTime: 2021-07-13 16:18:28
  */
 import { createDefaultRequest } from '../core/request'
 
@@ -30,6 +30,9 @@ const getPicJson = params => {
 const login = params => {
   return createDefaultRequest('/login', params)
 }
+const register = params => {
+  return createDefaultRequest('/register', params)
+}
 export default {
   getPicsFromServer,
   getArticleByMd5,
@@ -38,5 +41,6 @@ export default {
   getSubmitsFromMysql,
   searchMds,
   getPicJson,
-  login
+  login,
+  register
 }
