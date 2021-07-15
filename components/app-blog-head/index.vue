@@ -2,11 +2,11 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-13 10:13:55
+ * @LastEditTime: 2021-07-15 15:53:12
 -->
 <template>
   <div>
-    <div class="app-blog-head justify-content-between align-items-center">
+    <div class="app-blog-head justify-content-between align-items-center bg-white p-relative">
       <div class="p-relative d-flex">
         <a href="/">
           <svg class="ez-logo">
