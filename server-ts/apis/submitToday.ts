@@ -3,6 +3,7 @@ import moment from 'moment'
 import mysql from 'mysql'
 import config from '../../config/mysql'
 import md5 from 'md5-node'
+import middleware from '../middleware/index'
 const router = express.Router()
 
 const db = mysql.createConnection(config)
@@ -33,7 +34,7 @@ function addSubmit(params, res) {
   })
 }
 
-router.post('/submitToday', function (req, res) {
+router.post('/submitToday', middleware.midAuthCheck, function (req, res) {
   addSubmit(req.body, res)
 })
 module.exports = router

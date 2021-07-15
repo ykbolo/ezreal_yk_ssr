@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 15:22:01
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-09 15:07:32
+ * @LastEditTime: 2021-07-13 18:13:01
  */
 import express from 'express'
 import mysql from 'mysql'
@@ -49,6 +49,7 @@ function getMdFromMysql(params, res) {
 }
 
 router.post('/getMdFromMysql', function (req, res) {
+  console.log(req.signedCookies.token, req.cookies.token, req.sessionID)
   getMdFromMysql(req.body, res)
 })
 module.exports = router
