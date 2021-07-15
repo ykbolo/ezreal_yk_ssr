@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-15 15:53:12
+ * @LastEditTime: 2021-07-15 16:56:47
 -->
 <template>
   <div>
@@ -11,7 +11,8 @@
         <a href="/">
           <svg class="ez-logo">
             <symbol id="line-text">
-              <text text-anchor="middle" x="50%" y="50%" dy=".4em">EZREAL-YORK</text>
+              <text text-anchor="middle" x="50%" y="50%" dy=".4em" v-if="isMobile">EZ-Y</text>
+              <text text-anchor="middle" x="50%" y="50%" dy=".4em" v-else>EZREAL-YORK</text>
             </symbol>
             <use xlink:href="#line-text" class="text"></use>
             <use xlink:href="#line-text" class="text"></use>
@@ -19,10 +20,9 @@
             <use xlink:href="#line-text" class="text"></use></svg
         ></a>
         <div class="main-nav">
-          <a href="/list?page=1" class="t-nowrap"> 技术文档 </a>
+          <a href="/list?page=1" class="t-nowrap"> 技术 </a>
           <a href="/video" class="t-nowrap f-gray disabled"> 视频 </a>
-          <a href="/photos" class="t-nowrap"> 照片库 </a>
-          <a href="/about" class="t-nowrap"> 关于 </a>
+          <a href="/photos" class="t-nowrap"> 照片 </a>
         </div>
       </div>
       <div>

@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-07-12 14:15:55
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-13 16:39:01
+ * @LastEditTime: 2021-07-15 17:02:29
 -->
 <template>
   <div class="login-bg t-center">
@@ -21,11 +21,6 @@
       </div>
       <div class="f-12 t-center m-t-30">
         <a href="/register" class="f-white t-decoration">没有账号？立即注册吧>></a>
-      </div>
-      <div class="icon-wrapper">
-        <i class="iconfont phs-weixin"></i>
-        <i class="iconfont phs-weibo"></i>
-        <i class="iconfont phs-github"></i>
       </div>
     </div>
   </div>
