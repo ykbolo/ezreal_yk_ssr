@@ -14,9 +14,11 @@ db.connect(err => {
   }
 })
 
-function addSubmit(params, res) {
+function addSubmit(params, req, res) {
   let time = moment().format('YYYY-MM-DD HH:mm:ss')
-  let author = params.author || '匿名'
+  console.log(req.cookies.username)
+
+  let author = req.cookies.username || '匿名用户'
   let images = params.images || []
   let words = params.words
   let sql = `insert into tb_xiabibi (time,words,images,author,md5) values ('${time}',${JSON.stringify(words)},'${JSON.stringify(images)}','${author}','${md5(
@@ -35,6 +37,6 @@ function addSubmit(params, res) {
 }
 
 router.post('/submitToday', middleware.midAuthCheck, function (req, res) {
-  addSubmit(req.body, res)
+  addSubmit(req.body, req, res)
 })
 module.exports = router

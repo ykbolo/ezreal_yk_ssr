@@ -2,13 +2,13 @@
  * @Author: Yang Kang
  * @Date: 2021-05-25 10:27:39
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-06-04 11:50:21
+ * @LastEditTime: 2021-07-15 17:49:12
 -->
 <template>
-  <div class="container">
+  <div class="container m-t-30">
     <div class="pad p-30">
-      <a-input v-model="author" placeholder="输入昵称"></a-input>
-      <a-textarea placeholder="输入文字描述" v-model="words" :auto-size="{ minRows: 3, maxRows: 5 }" class="m-t-30" />
+      <!-- <a-input v-model="author" placeholder="输入昵称"></a-input> -->
+      <a-textarea placeholder="表达此刻的心情" v-model="words" :auto-size="{ minRows: 3, maxRows: 5 }" class="m-t-30" />
       <div class="d-flex m-t-30">
         <div class="image m-r-30" v-for="image in imagesBase64" :key="image.slice(0, 100)">
           <img :src="image" alt="" style="object-fit: contain" width="100%" height="100%" />
@@ -29,7 +29,7 @@
   import config from '~/config/backend'
   import { Image as VanImage } from 'vant'
   export default {
-    // layout: 'blog',
+    layout: 'blog',
     async asyncData() {
       const result = await services.getSubmitsFromMysql({ start: 0, hit: 10 })
       return {
@@ -101,8 +101,17 @@
             words: this.words
           })
           .then(res => {
-            console.log('已发表')
-            window.location.reload()
+            if (+res.status === 1) {
+              this.$message.info('成功提交')
+              window.location.reload()
+            } else {
+              if (res?.statusCode === '401') {
+                this.$message.info(res?.message)
+                setTimeout(() => {
+                  window.location.href = '/login?returnUrl=/mood'
+                }, 300)
+              }
+            }
           })
       }
     }

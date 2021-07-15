@@ -44,7 +44,7 @@ function getSubmitsFromMysql(params, res) {
     })
     res.send({
       total,
-      items
+      items: items?.reverse()
     })
   })
 }

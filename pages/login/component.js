@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-07-12 14:22:48
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-13 16:41:25
+ * @LastEditTime: 2021-07-15 17:49:53
  */
 import service from '~/services'
 export default {
@@ -11,7 +11,8 @@ export default {
   data() {
     return {
       phone: '',
-      password: ''
+      password: '',
+      returnUrl: this.$route.query.returnUrl || '/'
     }
   },
   methods: {
@@ -21,7 +22,7 @@ export default {
           if (+res.status === 1) {
             this.$message.info(`您好${res.user?.username}`)
             setTimeout(() => {
-              window.location.href = '/'
+              window.location.href = this.returnUrl
             }, 500)
           } else if (+res.status === 0) {
             this.$message.info('登录失败')
