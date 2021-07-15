@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-17 11:52:17
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-15 15:49:07
+ * @LastEditTime: 2021-07-15 18:25:24
  */
 import { createDefaultRequest } from '../core/request'
 
@@ -36,6 +36,9 @@ const register = params => {
 const getLobosVideos = params => {
   return createDefaultRequest('/getLobosVideos', params)
 }
+const logout = params => {
+  return createDefaultRequest('/logout', params)
+}
 export default {
   getPicsFromServer,
   getArticleByMd5,
@@ -46,5 +49,6 @@ export default {
   getPicJson,
   login,
   register,
-  getLobosVideos
+  getLobosVideos,
+  logout
 }

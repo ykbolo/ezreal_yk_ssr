@@ -2,7 +2,7 @@
  * @Author: Yang Kang
  * @Date: 2021-05-06 11:53:59
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-15 16:56:47
+ * @LastEditTime: 2021-07-15 18:23:21
 -->
 <template>
   <div>
@@ -28,7 +28,18 @@
       <div>
         <a href="/mood" class="p-h-15 p-v-15 f-bold mood">MOOD</a>
         <a href="/login" class="p-h-15 p-v-15 f-bold mood" v-if="!isLogin">登录</a>
-        <a class="p-h-15 p-v-15 f-bold mood" v-else>{{ username }}</a>
+        <a-dropdown class="p-h-15 p-v-15 f-bold mood" @click="logout()" v-else>
+          <a class="ant-dropdown-link" @click="e => e.preventDefault()"> {{ username }} <a-icon type="down" class="t-middle" /> </a>
+          <a-menu slot="overlay">
+            <a-menu-item key="0">
+              <a @click="changeName">修改昵称</a>
+            </a-menu-item>
+            <a-menu-item key="0">
+              <a @click="logout">退出登录</a>
+            </a-menu-item>
+          </a-menu>
+        </a-dropdown>
+        <!-- <a class="p-h-15 p-v-15 f-bold mood" @click="logout()" v-else></a> -->
       </div>
     </div>
     <div class="head-holder"></div>
