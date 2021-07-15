@@ -30,6 +30,7 @@ function addSubmit(params, req, res) {
     }
     if (result) {
       res.send({
+        status: 1,
         message: '成功'
       })
     }
