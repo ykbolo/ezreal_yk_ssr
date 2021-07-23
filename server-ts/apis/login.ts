@@ -2,15 +2,15 @@
  * @Author: Yang Kang
  * @Date: 2021-07-08 18:03:02
  * @LastEditors: Yang Kang
- * @LastEditTime: 2021-07-13 17:20:55
+ * @LastEditTime: 2021-07-20 15:28:44
  */
 import express from 'express'
 import { create } from '../../core/mysql'
 import _ from 'lodash'
-import { RowDataPacket } from 'mysql2'
+// import { RowDataPacket } from 'mysql2'
 import md5 from 'md5-node'
 const router = express.Router()
-interface User extends RowDataPacket {
+interface User {
   username: string
 }
 
@@ -53,7 +53,7 @@ const login = async (req, res) => {
     return
   }
   // 登录成功
-  let theUser: any = _.pick(userAwait[0][0], ['username'])
+  let theUser: User = _.pick(userAwait[0][0], ['username'])
   req.session.username = theUser.username || '匿名用户'
   // 如果前端没有设置cookie，或者cookie已经过期
   if (!req.cookies.token || req.cookies.token !== req.sessionID) {
