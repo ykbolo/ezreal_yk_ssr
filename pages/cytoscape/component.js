@@ -75,54 +75,39 @@ export default {
       { group: 'nodes', data: { id: 'a5', name: 'yk' }, classes: 'classes-A' },
       {
         group: 'edges',
-        data: { id: 'root-a1', name: '拥有', source: 'n1', target: 'n2' },
+        data: { id: 'root-a1', name: '拥有', source: 'root', target: 'a1' },
         style: edgeStyle
       },
       {
         group: 'edges',
-        data: { id: 'root-a2', name: '拥有', source: 'n1', target: 'n3' },
+        data: { id: 'root-a2', name: '拥有', source: 'root', target: 'a2' },
         style: edgeStyle
       },
       {
         group: 'edges',
-        data: { id: 'root-a3', name: '拥有', source: 'n1', target: 'n4' },
+        data: { id: 'root-a3', name: '拥有', source: 'root', target: 'a3' },
         style: edgeStyle
       },
       {
         group: 'edges',
-        data: { id: 'root-a4', name: '拥有', source: 'n1', target: 'n5' },
+        data: { id: 'root-a4', name: '拥有', source: 'root', target: 'a4' },
         style: edgeStyle
       },
       {
         group: 'edges',
-        data: { id: 'root-a5', name: '拥有', source: 'n1', target: 'n6' },
-        style: edgeStyle
-      },
-      {
-        group: 'edges',
-        data: { id: 'e6', name: '拥有', source: 'n1', target: 'n7' },
-        style: edgeStyle
-      },
-      {
-        group: 'edges',
-        data: { id: 'e7', name: '拥有', source: 'n1', target: 'n8' },
-        style: edgeStyle
-      },
-      {
-        group: 'edges',
-        data: { id: 'e8', name: '拥有', source: 'n1', target: 'n2' },
+        data: { id: 'root-a5', name: '拥有', source: 'root', target: 'a5' },
         style: edgeStyle
       }
     ])
 
-    cy.on('tap', '#n2', e => {
-      var node = e.target
-      console.log(node.id())
-      cy.add([
-        { group: 'nodes', data: { id: 'n3', name: 'yangkang' }, classes: 'classes-A', position: { x: 200, y: 300 } },
-        { group: 'edges', data: { id: 'e2', name: '是', source: 'n2', target: 'n3' } }
-      ])
-    })
+    // cy.on('tap', '#n2', e => {
+    //   var node = e.target
+    //   console.log(node.id())
+    //   cy.add([
+    //     { group: 'nodes', data: { id: 'n3', name: 'yangkang' }, classes: 'classes-A', position: { x: 200, y: 300 } },
+    //     { group: 'edges', data: { id: 'e2', name: '是', source: 'n2', target: 'n3' } }
+    //   ])
+    // })
 
     var layout = cy.layout({
       name: 'concentric',
