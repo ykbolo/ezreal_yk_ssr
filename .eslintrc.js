@@ -19,6 +19,7 @@ module.exports = {
     'no-debugger': 'warn',
     'new-cap': 0,
     'no-return-await': 0,
+    'no-sequences': 0,
     'vue/script-indent': [
       'error',
       2,
